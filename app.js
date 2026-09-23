@@ -80,6 +80,9 @@ const references = {
   beyondhod: ['Aguilera–Bagaria–Goldberg–Lücke 2025 · DOI', 'https://doi.org/10.48550/arXiv.2509.10254'],
   berkeleyvp: ['Berkeley 基数与 Vopěnka 原理 · DOI', 'https://doi.org/10.48550/arXiv.2404.10455'],
   goldberg: ['Goldberg 2021 · DOI', 'https://doi.org/10.48550/arXiv.2107.13119'],
+  beyondchoice: ['Bagaria–Koellner–Woodin 2019 · DOI', 'https://doi.org/10.1017/bsl.2019.28'],
+  periodicity: ['Goldberg–Schlutzenberg 2024 · DOI', 'https://doi.org/10.4171/JEMS/1318'],
+  choicelessproblems: ['Choiceless Elementary Embeddings · 问题 8(e)', 'https://karagila.org/cheese/problems.pdf'],
   laver: ['Laver 1995 · DOI', 'https://doi.org/10.1006/aima.1995.1014'],
   biane: ['Biane《Laver tables and combinatorics》· DOI', 'https://doi.org/10.48550/arXiv.1810.00548'],
   dimontewu: ['Dimonte–Wu 2015 · DOI', 'https://doi.org/10.48550/arXiv.1510.03287'],
@@ -154,14 +157,18 @@ const tiers = [
     {label:'I1',theories:[['ZFC + I1','j:Vλ+1→Vλ+1']],reason:'I1(λ) 与 λ⁺ 或 λ⁺⁺ 的树性质等组合性质有分别构造的相容性结果；这里不宣称它们同时成立或等一致。',sources:[references.dimontewu],problems:['i1forcing']},
     {label:'I0',theories:[['ZFC + I0','j:L(Vλ+1)→L(Vλ+1)'],['ZFC + 存在 ultraexacting 基数','Aguilera–Bagaria–Goldberg–Lücke']],reason:'2025 年论文定理 A 证明两者等一致；并非断言两个公理在同一模型中等价。',sources:[references.beyondhod],problems:['i0hod'],link:'solid'}
   ],note:'I1 的组合结论是力迫相容性结果；I0 的 ultraexacting 配对才是等一致性结果。'},
-  {name:'论天上',code:'TIER 09',branch:true,summary:'Berkeley 与 rank-Berkeley 在 ZF 背景下各有精确的 Vopěnka 原理对应。',route:'ZF 分支',bands:[
-    {label:'rank-Berkeley 层',theories:[['ZF + 存在 rank-Berkeley 基数','rBC'],['ZF + VP^ω(OR) + ¬VP(OR)','按原论文的受限模式']],reason:'定理 5.14 的等一致配对；VP^ω(OR) 中的上标 ω 表示同一有限型式的限制。',sources:[references.berkeleyvp]},
-    {label:'Berkeley 层',theories:[['ZF + 存在 Berkeley 基数','BC'],['ZF + 𝕍ℙ^ω + ¬𝕍ℙ','按原文的可定义类模式']],reason:'定理 5.13 证明等一致。𝕍ℙ^ω 仅限同一有限型式的结构类，不能省去上标或否定项。',sources:[references.berkeleyvp],link:'dashed'}
-  ],note:'两个配对各自同框；跨框虚线仅表示阅读顺序，不主张 rank-Berkeley 与 Berkeley 的严格一致性比较。'},
-  {name:'论天最上',code:'TIER 10',branch:true,summary:'以无选择的 NBG 类理论形式化全宇宙嵌入，并标出真类版本的已知等一致结果。',route:'无选择 NBG 分支',bands:[
-    {label:'单个 Reinhardt',theories:[['NBG − AC + 存在 Reinhardt 基数','非平凡类嵌入 j:V→V']],reason:'必须将嵌入作为类形式化；与 AC 不相容。单个版本的相容性仍是开放问题。',sources:[references.goldberg]},
-    {label:'真类多个 Reinhardt',theories:[['NBG − AC + 真类多个 Reinhardt 基数','全宇宙自嵌入'],['NBG − AC + 真类多个弱 Reinhardt 基数','目标内模型含每个序数的双幂集']],reason:'Goldberg 2021 年证明两种真类版本等一致；该结论不自动适用于单个 Reinhardt。',sources:[references.goldberg],problems:['reinhardtclass'],link:'solid'}
-  ],note:'本层与论天上的相对强弱没有由导航顺序给出；所有表述都采用无选择的 NBG 类理论背景。'}
+  {name:'论天上',code:'TIER 09',branch:true,summary:'rank-Berkeley 与 Reinhardt 的精确等一致性仍是开放问题；单个 Reinhardt 放在此处。',route:'无选择公理 · rank-Berkeley / Reinhardt',relations:[['已证上界','rank-Berkeley ≤Con Reinhardt'],['开放问题','二者是否等一致？']],bands:[
+    {label:'rank-Berkeley 层',theories:[['ZF + 存在 rank-Berkeley 基数','rBC'],['ZF + VP^ω(OR) + ¬VP(OR)','受限 Vopěnka 模式']],reason:'两项等一致（定理 5.14）。Reinhardt 可推出 rank-Berkeley 的存在；反向是否达到相同一致性强度仍是开放问题。基数本身的大小与公理的一致性强度也不能混为一谈。',sources:[references.berkeleyvp,references.periodicity,references.choicelessproblems]},
+    {label:'单个 Reinhardt',theories:[['NBG − AC + 存在 Reinhardt 基数','非平凡类嵌入 j:V→V']],reason:'全宇宙嵌入须在无选择的类理论中形式化。它提供 rank-Berkeley 的一致性上界；目前不能把二者标成等一致。',sources:[references.beyondchoice,references.periodicity],link:'dashed'},
+    {label:'真类多个 Reinhardt',theories:[['NBG − AC + 真类多个 Reinhardt 基数','全宇宙自嵌入'],['NBG − AC + 真类多个弱 Reinhardt 基数','目标内模型含每个序数的双幂集']],reason:'Goldberg 2021 年证明两种真类版本等一致；该结论不适用于单个 Reinhardt，也不自动与 super-Reinhardt 比较。',sources:[references.goldberg],problems:['reinhardtclass'],link:'dashed'}
+  ],note:'已证：Con(Reinhardt) ⇒ Con(rank-Berkeley)。是否等一致尚无定论。下一层的 Berkeley 能向下反映出 Reinhardt 模型；这才是把 Berkeley 放到 Reinhardt 之后的依据。'},
+  {name:'论天最上',code:'TIER 10',branch:true,summary:'Reinhardt 的强化与 Berkeley 分支形成偏序：Berkeley 与 super-Reinhardt 的先后尚未解决。',route:'无选择公理 · 两条相交的强化链',relations:[['严格强度链','Reinhardt <Con super-Reinhardt <Con totally Reinhardt'],['另一严格关系','Reinhardt <Con Berkeley'],['直接蕴含','club Berkeley ⇒ totally Reinhardt、Berkeley；limit club Berkeley ⇒ club Berkeley'],['仍未比较','Berkeley 与 super-Reinhardt、totally Reinhardt']],bands:[
+    {label:'super-Reinhardt',theories:[['NBG − AC + 存在 super-Reinhardt 基数','固定 κ；任意 λ 都有 j:V→V 且 j(κ)>λ']],reason:'定义 2.2；定理 2.1 证明它在较低秩强反映 Reinhardt。因此其一致性强度严格高于单个 Reinhardt。与普通 Berkeley 的相对强弱未定。',sources:[references.beyondchoice]},
+    {label:'Berkeley',theories:[['ZF + 存在 Berkeley 基数','BC'],['ZF + 𝕍ℙ^ω + ¬𝕍ℙ','受限可定义类模式']],reason:'两项等一致（定理 5.13）。定理 3.7 从最小 Berkeley 下方得到 Reinhardt 连同更强传统大基数的模型，故 Berkeley 严格强于单个 Reinhardt；它与 super-Reinhardt 的先后仍未解决。',sources:[references.berkeleyvp,references.beyondchoice],link:'dashed'},
+    {label:'totally Reinhardt',theories:[['ZF + 存在 totally Reinhardt 基数','对每个 A，秩段内有 A-super-Reinhardt']],reason:'定义 2.3：对每个 A⊆Vκ，相应的 (Vκ,Vκ+1) 二阶模型满足 A-super-Reinhardt；因此向下反映 super-Reinhardt。普通 Berkeley 与此层的比较没有定论。',sources:[references.beyondchoice],link:'dashed'},
+    {label:'club Berkeley',theories:[['ZF + 存在 club Berkeley 基数','临界点可取自任意 club C⊆δ']],reason:'定理 3.8：club Berkeley 本身是 totally Reinhardt；它也加强普通 Berkeley。仅凭此直接蕴含，不宣称已证明与 totally Reinhardt 严格不等一致。',sources:[references.beyondchoice],link:'dashed'},
+    {label:'limit club Berkeley',theories:[['ZF + 存在 limit club Berkeley 基数','club Berkeley 且为 Berkeley 基数的极限']],reason:'定义 3.9；定理 3.9 在较低秩得到同时是 Berkeley 与 super-Reinhardt 的基数。它蕴含 club Berkeley；不额外宣称严格一致性差距。',sources:[references.beyondchoice],link:'dashed'}
+  ],note:'上方关系图给出已证的严格强度或直接蕴含；框间虚线只排布内容。普通 Berkeley 与 super-Reinhardt、totally Reinhardt 的相对一致性强度仍未解决。'}
 ];
 
 const tierList = document.querySelector('#tier-list');
@@ -207,6 +214,7 @@ function renderDetail() {
   detail.append(head);
   if(tier.branch)detail.append(element('div','branch-alert','本层属于无选择公理的研究线。虚线只表示主题或原 tier 的阅读顺序，不声称与 ZFC 主线有已证明的强弱关系。'));
   detail.append(element('p','route-label',tier.route));
+  if(tier.relations?.length){const relations=element('div','relation-map');relations.append(element('strong','relation-map-title','已证关系与开放问题'));tier.relations.forEach(([label,value])=>{const row=element('div','relation-map-row');row.append(element('span',null,label),element('b',null,value));relations.append(row);});detail.append(relations);}
   const list=element('div','level-list');
   tier.bands.forEach((band,index)=>{
     if(index>0){
