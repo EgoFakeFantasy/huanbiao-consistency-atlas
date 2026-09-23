@@ -10,3 +10,5 @@
 .band-sources{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .band-sources a{font-size:11px;border:1px solid #3b5c70;border-radius:6px;padding:5px 7px}
 @media(max-width:560px){.theory-grid{grid-template-columns:1fr}.equicon-label{display:inline-block;margin-top:10px}.band-sources a{line-height:1.4}}
+
+.relation-map{max-width:900px;border:1px solid #695b8b;background:#202239;border-radius:12px;padding:16px 19px;margin:-4px 0 23px}.relation-map-title{display:block;color:#e0d7fc;font-size:13px;margin-bottom:11px}.relation-map-row{display:grid;grid-template-columns:100px minmax(0,1fr);gap:12px;padding:8px 0;border-top:1px solid #ffffff17;font-size:13px;line-height:1.55}.relation-map-row span{color:var(--soft)}.relation-map-row b{font-weight:600;color:var(--text);overflow-wrap:anywhere}@media(max-width:560px){.relation-map-row{grid-template-columns:1fr;gap:2px}}
