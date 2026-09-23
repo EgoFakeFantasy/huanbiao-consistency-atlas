@@ -74,7 +74,8 @@ const references = {
   hauser: ['Hauser 投射绝对性论文 · DOI', 'https://doi.org/10.1016/0168-0072(94)00041-Z'],
   goldstern: ['Goldstern–Kellner–Shelah 2019', 'https://annals.math.princeton.edu/wp-content/uploads/annals-v190-n1-p02-s.pdf'],
   hamkins: ['Hamkins–Woodin 2004 · arXiv DOI', 'https://doi.org/10.48550/arXiv.math/0403165'],
-  precipitous: ['Jech–Magidor–Mitchell–Prikry 1980 · DOI', 'https://doi.org/10.2307/2273349']
+  precipitous: ['Jech–Magidor–Mitchell–Prikry 1980 · DOI', 'https://doi.org/10.2307/2273349'],
+  realvalued: ['Solovay 1971 · DOI', 'https://doi.org/10.1090/pspum/013.1/0290961']
 };
 
 Object.assign(papers, {
@@ -87,6 +88,7 @@ Object.assign(papers, {
   projlm: {title:'所有投射实数集都可测',kind:'与不可达基数等一致',people:'Robert Solovay · 1970；Saharon Shelah · 1984',story:'这只量化投射集合，因而可与 ZFC 共存；其一致性强度仍达到不可达基数。与“所有实数集都可测”的 ZF+DC 理论并列，但两个理论的陈述不同。',sources:[references.solovay,references.shelah,references.goldstern]},
   baire: {title:'所有实数集都有 Baire 性质',kind:'ZF+DC 背景下与 ZFC 等一致',people:'Saharon Shelah · 1984',story:'Shelah 的模型表明，ZF+DC 加上每个实数集都有 Baire 性质不需要不可达基数。与所有实数集可测的强度对照鲜明。',sources:[references.shelah]},
   precip: {title:'ω₁ 上存在 precipitous ideal',kind:'与可测基数等一致',people:'Thomas Jech、Menachem Magidor、William Mitchell、Karel Prikry · 1980',story:'从可测基数经塌缩得到 ω₁ 上的 precipitous ideal；反向由泛超幂推出内模型中有可测基数。此结论不声称 ω₁ 本身在 ZFC 中可测。',sources:[references.precipitous]},
+  realvalued: {title:'连续统是实值可测基数',kind:'与可测基数等一致',people:'Robert M. Solovay · 1971',story:'从可测基数出发，经随机实数力迫使连续统成为实值可测；反向可从实值可测性得到可测基数的内模型。此处的“实值可测”不等于所有实数集在原 Lebesgue 测度下可测。',sources:[references.realvalued]},
 });
 
 const tiers = [
@@ -108,7 +110,7 @@ const tiers = [
     {label:'Ramsey 层',theories:[['ZFC + 存在 Ramsey 基数','强化的划分性质']],reason:'单独陈列；与前两组的视觉次序只沿用原 tier 的阅读顺序。',link:'dashed'}
   ],note:'虚线表示本图没有声称相邻两组存在严格的一致性强度箭头。'},
   {name:'一线',code:'TIER 05',summary:'这一层展开为多个精确对应组。PD 的有限模式与 AD 的真正无穷序列分列。',route:'可测 → 决定性 → 超紧致',bands:[
-    {label:'可测层',theories:[['ZFC + 存在可测基数','κ-完备非主超滤'],['ZFC + ω₁ 上存在 precipitous ideal','Jech–Magidor–Mitchell–Prikry']],reason:'两个理论等一致。可测基数还直接推出 V ≠ L；后者是命题判定，不是另一种等一致理论。',sources:[references.precipitous],problems:['vl','precip']},
+    {label:'可测层',theories:[['ZFC + 存在可测基数','κ-完备非主超滤'],['ZFC + ω₁ 上存在 precipitous ideal','Jech–Magidor–Mitchell–Prikry'],['ZFC + 连续统实值可测','Solovay 的随机实数模型']],reason:'三种理论等一致。可测基数还直接推出 V ≠ L；后者是命题判定。',sources:[references.precipitous,references.realvalued],problems:['vl','precip','realvalued']},
     {label:'强基数模式层',theories:[['ZFC + 对每个有限 n 存在 n 个强基数','公理模式'],['ZFC + 投射绝对性','集合力迫下的精确版本']],reason:'投射绝对性的量词与力迫范围须按原定理理解。',sources:[references.hauser],problems:['projabs'],link:'dashed'},
     {label:'单个 Woodin 层',theories:[['ZFC + 存在 Woodin 基数','一枚 Woodin'],['ZFC + Δ¹₂ 决定性','细体／无实参数版本']],reason:'Woodin 的精确等一致性结果；不可把 Δ¹₂ 换成整个 PD。',sources:[references.larson],problems:['delta2'],link:'dashed'},
     {label:'PD 有限模式层',theories:[['ZFC + PD','所有投射博弈可决定'],['ZFC + {「存在 n 个 Woodin」: n∈ω}','每个有限 n 一条公理']],reason:'此处是公理模式：每个有限 n 各有一条证明要求；它不等于单条“存在无穷多个 Woodin”。',sources:[references.martinsteel,references.larson],problems:['pd'],link:'solid'},
