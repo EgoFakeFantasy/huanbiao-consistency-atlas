@@ -6,4 +6,6 @@
 
 典型对应组包括 ZF+AD ≡Con ZFC+存在无穷多个 Woodin 基数、ZFC+PD ≡Con 每个有限 n 各有 n 个 Woodin 基数的公理模式、ZF+ADᵣ ≡Con 同时为 Woodin 与 <λ-强基数之极限的 λ、ZF+DC+所有实数集可测 ≡Con ZFC+不可达基数。此处的 ≡Con 表示相对一致性同强度，不表示两个理论互相蕴含。PFA 只标出来自超紧致基数的相容性构造。
 
-每个独立性命题的弹窗附解决者、年份、工作介绍及原始论文 DOI 或原文链接。较高决定性层的精确表述参考 [Larson](https://paulblarson.github.io/Cabal_Determinacy.pdf) 与 [Steel](https://math.berkeley.edu/~steel/papers/tutorial3.pdf)，各理论框另附原始论文或专家讲义链接。未核对到精确等一致对应的高阶大基数保持为单独理论。
+命题弹窗附证明者、年份、工作介绍及原始论文 DOI 或原文链接。较高决定性层的精确表述参考 [Larson](https://paulblarson.github.io/Cabal_Determinacy.pdf) 与 [Steel](https://math.berkeley.edu/~steel/papers/tutorial3.pdf)。
+
+超一线以上补入可扩基数与二阶逻辑 ULST 数、巨大基数与类型省略紧致性、I0 与 ultraexacting 基数、Berkeley 基数与受限 Vopěnka 原理、真类多个弱 Reinhardt 与 Reinhardt 基数等对应；各框附原论文。I3 对 Laver table 的 q(n) 全函数性是单向推论，ZFC 中可证与否仍未解决。I1 的组合性质也是相容性构造，不是等一致性配对。未核对到精确等一致对应的公理保持单独理论。
