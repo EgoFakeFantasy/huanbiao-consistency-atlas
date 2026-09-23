@@ -75,7 +75,14 @@ const references = {
   goldstern: ['Goldstern–Kellner–Shelah 2019', 'https://annals.math.princeton.edu/wp-content/uploads/annals-v190-n1-p02-s.pdf'],
   hamkins: ['Hamkins–Woodin 2004 · arXiv DOI', 'https://doi.org/10.48550/arXiv.math/0403165'],
   precipitous: ['Jech–Magidor–Mitchell–Prikry 1980 · DOI', 'https://doi.org/10.2307/2273349'],
-  realvalued: ['Solovay 1971 · DOI', 'https://doi.org/10.1090/pspum/013.1/0290961']
+  realvalued: ['Solovay 1971 · DOI', 'https://doi.org/10.1090/pspum/013.1/0290961'],
+  bonneyosinski: ['Boney–Osinski 2026 · DOI', 'https://doi.org/10.48550/arXiv.2505.15574'],
+  beyondhod: ['Aguilera–Bagaria–Goldberg–Lücke 2025 · DOI', 'https://doi.org/10.48550/arXiv.2509.10254'],
+  berkeleyvp: ['Berkeley 基数与 Vopěnka 原理 · DOI', 'https://doi.org/10.48550/arXiv.2404.10455'],
+  goldberg: ['Goldberg 2021 · DOI', 'https://doi.org/10.48550/arXiv.2107.13119'],
+  laver: ['Laver 1995 · DOI', 'https://doi.org/10.1006/aima.1995.1014'],
+  biane: ['Biane《Laver tables and combinatorics》· DOI', 'https://doi.org/10.48550/arXiv.1810.00548'],
+  dimontewu: ['Dimonte–Wu 2015 · DOI', 'https://doi.org/10.48550/arXiv.1510.03287']
 };
 
 Object.assign(papers, {
@@ -89,6 +96,12 @@ Object.assign(papers, {
   baire: {title:'所有实数集都有 Baire 性质',kind:'ZF+DC 背景下与 ZFC 等一致',people:'Saharon Shelah · 1984',story:'Shelah 的模型表明，ZF+DC 加上每个实数集都有 Baire 性质不需要不可达基数。与所有实数集可测的强度对照鲜明。',sources:[references.shelah]},
   precip: {title:'ω₁ 上存在 precipitous ideal',kind:'与可测基数等一致',people:'Thomas Jech、Menachem Magidor、William Mitchell、Karel Prikry · 1980',story:'从可测基数经塌缩得到 ω₁ 上的 precipitous ideal；反向由泛超幂推出内模型中有可测基数。此结论不声称 ω₁ 本身在 ZFC 中可测。',sources:[references.precipitous]},
   realvalued: {title:'连续统是实值可测基数',kind:'与可测基数等一致',people:'Robert M. Solovay · 1971',story:'从可测基数出发，经随机实数力迫使连续统成为实值可测；反向可从实值可测性得到可测基数的内模型。此处的“实值可测”不等于所有实数集在原 Lebesgue 测度下可测。',sources:[references.realvalued]},
+  laverq: {title:'Laver table 的 q(n) 对每个 n 都有定义',kind:'I3 下可证明；ZFC 中的可证性仍未解决',people:'Richard Laver · 1992 年预印本，1995 年发表',story:'设 p(m) 是 2^m 阶 Laver table 首行的周期，q(n)=min{m:p(m)≥2^n}。I3 给出的秩内嵌入使这些周期无界，因此 q 为全函数。这是 I3 的单向推论；不能据此声称 q 的全函数性与 I3 等一致，也不能声称已证明它独立于 ZFC。',sources:[references.laver,references.biane]},
+  i1forcing: {title:'I1 与 λ⁺、λ⁺⁺ 的树性质可相容',kind:'I1 给出相容性上界；不是等一致式',people:'Vincenzo Dimonte、Liuzhen Wu · 2015',story:'作者发展保持 I1(λ) 的力迫工具，构造它与多种 λ 附近组合性质共同成立的模型，包括 λ⁺ 和 λ⁺⁺ 上的树性质、GCH 首次失败等。论文没有将这些性质单独判为与 I1 等一致。',sources:[references.dimontewu]},
+  exacting: {title:'exacting 基数的位置',kind:'一致性强度严格介于 I3 与 I2 之间',people:'Juan Pablo Aguilera、Joan Bagaria、Gabriel Goldberg、Philipp Lücke · 2025',story:'论文的推论 5.11 给出严格分层：Con(ZFC+I2) 强于 Con(ZFC+存在 exacting 基数)，后者又强于 Con(ZFC+I3)。因此把它单设一档，不与两端并列。',sources:[references.beyondhod]},
+  i2hod: {title:'I2 与 HOD 假设的相容性结果',kind:'从 I2 得到相对一致性；非等一致',people:'Aguilera、Bagaria、Goldberg、Lücke · 2025',story:'论文推论 5.6 证明：若 ZFC+I2 一致，则 ZFC 与 HOD 假设、某个 exacting 基数及其上方一个可扩基数一起也一致。这是内模型／力迫的相容性结论，不表示 I2 直接推出 HOD 假设。',sources:[references.beyondhod]},
+  i0hod: {title:'ultraexacting 与 HOD 猜想',kind:'同强度理论的结构结果',people:'Aguilera、Bagaria、Goldberg、Lücke · 2025',story:'论文将 ultraexacting 基数与 I0 配成等一致理论，并证明 ultraexacting 可用带序数可定义谓词的初等自嵌入刻画。它们的存在与 V=HOD 不相容；这不是将 HOD 猜想本身标成已解决。',sources:[references.beyondhod]},
+  reinhardtclass: {title:'弱 Reinhardt 与 Reinhardt 的真类版本',kind:'无选择二阶背景下等一致',people:'Gabriel Goldberg · 2021',story:'若存在真类多个弱 Reinhardt 基数，Goldberg 构造含有真类多个 Reinhardt 基数的内模型；反向显然。这是关于“真类多个”的结果，不能移用于单个 Reinhardt 基数。',sources:[references.goldberg]},
 });
 
 const tiers = [
@@ -119,25 +132,30 @@ const tiers = [
     {label:'ADᵣ 层',theories:[['ZFC + λ 同时是 Woodin 与 <λ-强基数的极限','导出模型假设'],['ZF + ADᵣ','实数选择的博弈可决定'],['ZF + AD + 每个实数集都是 Suslin','等价表述']],reason:'Woodin–Steel 的等一致性；末两项在 AD 背景下还可证明等价。',sources:[references.steeldm,references.larson],problems:['adr'],link:'solid'},
     {label:'超紧致层',theories:[['ZFC + 存在超紧致基数','强闭包初等嵌入']],reason:'Baumgartner 从这里构造 PFA 模型。目前不把 PFA 与超紧致写作等一致。',problems:['pfa'],link:'dashed'}
   ],note:'“ω 个 Woodin + 上方有可测基数”是推出 L(ℝ) ⊨ AD 的常用充分条件，不是 AD 的最小精确强度。'},
-  {name:'超一线',code:'TIER 06',summary:'可扩、巨大及 n-巨大公理。未找到可安全并列的经典等一致命题时，只列已确认的理论。',route:'高阶初等嵌入',bands:[
-    {label:'可扩层',theories:[['ZFC + 存在可扩基数','extendible']]},
-    {label:'巨大层',theories:[['ZFC + 存在巨大基数','huge']],link:'solid'},
-    {label:'n-巨大系列',theories:[['ZFC + 存在 n-巨大基数','固定有限 n']],reason:'n 必须逐一指定；不以一个笼统名称代替精确假设。',link:'solid'}
-  ],note:'最小见证基数在序数上的位置，与两个公理的一致性强度比较是不同问题。'},
-  {name:'论天下',code:'TIER 07',summary:'进入秩内嵌入；目前不附会未有可靠核对的等一致性命题。',route:'rank-into-rank 第一段',bands:[
-    {label:'I3',theories:[['ZFC + I3','非平凡 j:Vλ→Vλ']]},
-    {label:'I2',theories:[['ZFC + I2','更强的秩内嵌入']],link:'solid'}
-  ],note:'HOD 猜想属于研究问题，这里没有把它写作已判定的独立性命题。'},
-  {name:'论天中',code:'TIER 08',summary:'I1 与 I0 的定义域不同，按各自精确公理分组。',route:'rank-into-rank 第二段',bands:[
-    {label:'I1',theories:[['ZFC + I1','j:Vλ+1→Vλ+1']]},
-    {label:'I0',theories:[['ZFC + I0','j:L(Vλ+1)→L(Vλ+1)']],link:'solid'}
-  ],note:'跨到无选择的大基数分支时不沿用这些箭头。'},
-  {name:'论天上',code:'TIER 09',branch:true,summary:'无选择背景中的 Berkeley 等大基数另成分支。',route:'ZF 分支',bands:[
-    {label:'Berkeley 型假设',theories:[['ZF + 存在 Berkeley 基数','需指定精确定义与背景理论']],reason:'目前不与 I0 或 Reinhardt 画未经证明的等一致性连接。'}
-  ],note:'原 tier 的位置是导航安排，不自动给出与 ZFC 主线的相对一致性比较。'},
-  {name:'论天最上',code:'TIER 10',branch:true,summary:'全宇宙类嵌入需要明确类理论与逻辑背景。',route:'无选择类理论分支',bands:[
-    {label:'Reinhardt 型假设',theories:[['ZF / NBG / MK 的适当版本 + 非平凡 j:V→V','类嵌入须单独形式化']],reason:'与完整选择公理不相容；目前不宣称与 Berkeley 假设等一致。'}
-  ],note:'这一层与论天上之间只保留原 tier 的阅读顺序。'}
+  {name:'超一线',code:'TIER 06',summary:'以模型论刻画补足可扩与巨大层；同框只放已核对的等价或等一致理论。',route:'可扩 → Vopěnka → 巨大',bands:[
+    {label:'可扩层',theories:[['ZFC + 存在可扩基数','extendible'],['ZFC + 二阶逻辑 L² 的 ULST 数存在','该数恰是最小可扩基数']],reason:'Boney–Osinski 定理 6.2 给出同一模型内的精确刻画：最小可扩基数 = ULST(L²)。',sources:[references.bonneyosinski]},
+    {label:'C⁽ⁿ⁾-可扩系列（固定 n≥1）',theories:[['ZFC + 存在 C⁽ⁿ⁾-可扩基数','逐一固定 n'],['ZFC + sort logic Lˢ⁽ⁿ⁾ 的 ULST 数存在','最小 C⁽ⁿ⁾-可扩基数']],reason:'定理 6.3 对每个固定 n 给出精确对应；不同 n 之间不可视为同一强度。',sources:[references.bonneyosinski],link:'solid'},
+    {label:'Vopěnka 原理 VP',theories:[['ZFC + VP','类形式的 Vopěnka 原理'],['ZFC +「每种逻辑都有 ULST 数」','相应公理模式']],reason:'推论 6.4 给出等价公理模式；这里的“每种逻辑”按原文的抽象逻辑定义理解。',sources:[references.bonneyosinski],link:'solid'},
+    {label:'巨大层',theories:[['ZFC + 存在巨大基数 κ','某目标 λ>κ'],['ZFC + L(Q^WF) 满足相应的类型省略紧致性','[λ]^κ_*–κ 紧致性']],reason:'定理 4.5 对给定 κ<λ 逐点等价；存在量化后得到同一强度的理论。',sources:[references.bonneyosinski],link:'solid'},
+    {label:'n-巨大系列（固定 n≥2）',theories:[['ZFC + 存在 n-巨大基数','n 分别指定']],reason:'1-巨大即巨大；n≥2 的每一项单列于此，未找到可靠的经典问题精确等一致配对。',link:'solid'}
+  ],note:'ULST 指向上 Löwenheim–Skolem–Tarski 数。这里的模型论对应是精确刻画；n-巨大暂不添未经核对的等一致式。'},
+  {name:'论天下',code:'TIER 07',summary:'I3 的 Laver table 推论与 I3、I2 之间的 exacting 层一起显示。',route:'rank-into-rank 第一段',bands:[
+    {label:'I3',theories:[['ZFC + I3','非平凡 j:Vλ→Vλ']],reason:'I3 可证明首行 Laver table 周期无界，因此 q(n) 对每个 n 有定义；ZFC 能否证明该全函数性仍未解决。',sources:[references.laver],problems:['laverq']},
+    {label:'exacting 层',theories:[['ZFC + 存在 exacting 基数','严格介于 I3 与 I2']],reason:'2025 年结果证明这一层的一致性强度严格高于 I3、低于 I2。',sources:[references.beyondhod],problems:['exacting'],link:'solid'},
+    {label:'I2',theories:[['ZFC + I2','更强的秩内嵌入']],reason:'I2 还给出 HOD 假设与 exacting、上方可扩基数共同成立的相对一致性。',sources:[references.beyondhod],problems:['i2hod'],link:'solid'}
+  ],note:'I3 对 q(n) 是单向判定，不能据此推断 q(n) 与 I3 等一致或已知独立于 ZFC。'},
+  {name:'论天中',code:'TIER 08',summary:'I1 添入组合性质的相容性工作；I0 添入已证明的同强度理论。',route:'rank-into-rank 第二段',bands:[
+    {label:'I1',theories:[['ZFC + I1','j:Vλ+1→Vλ+1']],reason:'I1(λ) 能与 λ⁺、λ⁺⁺ 的树性质及其他 λ 附近组合性质同时相容；这些性质不在此被宣称等一致。',sources:[references.dimontewu],problems:['i1forcing']},
+    {label:'I0',theories:[['ZFC + I0','j:L(Vλ+1)→L(Vλ+1)'],['ZFC + 存在 ultraexacting 基数','Aguilera–Bagaria–Goldberg–Lücke']],reason:'2025 年论文定理 A 证明两者等一致；并非断言两个公理在同一模型中等价。',sources:[references.beyondhod],problems:['i0hod'],link:'solid'}
+  ],note:'I1 的组合结论是力迫相容性结果；I0 的 ultraexacting 配对才是等一致性结果。'},
+  {name:'论天上',code:'TIER 09',branch:true,summary:'Berkeley 与 rank-Berkeley 在 ZF 背景下各有精确的 Vopěnka 原理对应。',route:'ZF 分支',bands:[
+    {label:'rank-Berkeley 层',theories:[['ZF + 存在 rank-Berkeley 基数','rBC'],['ZF + VP^ω(OR) + ¬VP(OR)','按原论文的受限模式']],reason:'定理 5.14 的等一致配对；VP^ω(OR) 中的上标 ω 表示同一有限型式的限制。',sources:[references.berkeleyvp]},
+    {label:'Berkeley 层',theories:[['ZF + 存在 Berkeley 基数','BC'],['ZF + 𝕍ℙ^ω + ¬𝕍ℙ','按原文的可定义类模式']],reason:'定理 5.13 证明等一致。𝕍ℙ^ω 仅限同一有限型式的结构类，不能省去上标或否定项。',sources:[references.berkeleyvp],link:'dashed'}
+  ],note:'两个配对各自同框；跨框虚线仅表示阅读顺序，不主张 rank-Berkeley 与 Berkeley 的严格一致性比较。'},
+  {name:'论天最上',code:'TIER 10',branch:true,summary:'以无选择的 NBG 类理论形式化全宇宙嵌入，并标出真类版本的已知等一致结果。',route:'无选择 NBG 分支',bands:[
+    {label:'单个 Reinhardt',theories:[['NBG − AC + 存在 Reinhardt 基数','非平凡类嵌入 j:V→V']],reason:'必须将嵌入作为类形式化；与 AC 不相容。单个版本的相容性仍是开放问题。',sources:[references.goldberg]},
+    {label:'真类多个 Reinhardt',theories:[['NBG − AC + 真类多个 Reinhardt 基数','全宇宙自嵌入'],['NBG − AC + 真类多个弱 Reinhardt 基数','目标内模型含每个序数的双幂集']],reason:'Goldberg 2021 年证明两种真类版本等一致；该结论不自动适用于单个 Reinhardt。',sources:[references.goldberg],problems:['reinhardtclass'],link:'solid'}
+  ],note:'本层与论天上的相对强弱没有由导航顺序给出；所有表述都采用无选择的 NBG 类理论背景。'}
 ];
 
 const tierList = document.querySelector('#tier-list');
@@ -145,6 +163,7 @@ const detail = document.querySelector('#detail');
 const popover = document.querySelector('#popover');
 let selected = 2;
 let activeBadge = null;
+let popoverShownAt = 0;
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -211,7 +230,7 @@ function renderDetail() {
       band.problems.forEach(id=>{
         const badge=element('button','problem-badge',papers[id].title);badge.type='button';badge.dataset.problemId=id;
         badge.setAttribute('aria-haspopup','dialog');badge.setAttribute('aria-expanded','false');
-        badge.title='查看独立性证明与原始工作';
+        badge.title='查看命题、证明及原始工作';
         badge.addEventListener('mouseenter',()=>showPopover(badge));
         badge.addEventListener('focus',()=>showPopover(badge));
         badge.addEventListener('click',event=>{event.stopPropagation();showPopover(badge);});
@@ -225,6 +244,7 @@ function renderDetail() {
 
 function showPopover(badge) {
   const data=papers[badge.dataset.problemId];
+  popoverShownAt=Date.now();
   if(activeBadge&&activeBadge!==badge)activeBadge.setAttribute('aria-expanded','false');
   activeBadge=badge;badge.setAttribute('aria-expanded','true');
   popover.replaceChildren();
@@ -232,7 +252,7 @@ function showPopover(badge) {
   const group=element('div');group.append(element('div','pop-kind',data.kind),element('h3',null,data.title));
   const close=element('button','close-pop','×');close.type='button';close.setAttribute('aria-label','关闭命题说明');close.addEventListener('click',hidePopover);
   head.append(group,close);popover.append(head);
-  const who=element('p');const bold=element('strong',null,'解决者与时间：');who.append(bold,document.createTextNode(data.people));popover.append(who);
+  const who=element('p');const bold=element('strong',null,'证明／研究者与时间：');who.append(bold,document.createTextNode(data.people));popover.append(who);
   const description=element('p');description.append(element('strong',null,'工作简介：'),document.createTextNode(data.story));popover.append(description);
   const links=element('div','pop-sources');data.sources.forEach(([label,url])=>{const a=element('a',null,label+' ↗');a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.append(a);});popover.append(links);
   popover.hidden=false;
@@ -247,6 +267,6 @@ function showPopover(badge) {
 function hidePopover(){popover.hidden=true;if(activeBadge)activeBadge.setAttribute('aria-expanded','false');activeBadge=null;}
 document.addEventListener('keydown',event=>{if(event.key==='Escape')hidePopover();});
 document.addEventListener('click',event=>{if(!popover.hidden&&!popover.contains(event.target)&&!event.target.closest('.problem-badge'))hidePopover();});
-window.addEventListener('scroll',()=>{if(!popover.hidden)hidePopover();},{passive:true});
+window.addEventListener('scroll',()=>{if(!popover.hidden&&Date.now()-popoverShownAt>300)hidePopover();},{passive:true});
 window.addEventListener('resize',hidePopover);
 renderNavigation();renderDetail();
