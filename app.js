@@ -30,9 +30,9 @@ const papers = {
     sources: [['Solovay 1970 · DOI', 'https://doi.org/10.2307/1970696'], ['Shelah 1984 · DOI', 'https://doi.org/10.1007/BF02760522']]
   },
   tp: {
-    title: 'ℵ₂ 的树性质', kind: '相对于 ZFC 独立；弱紧致基数给出相容性上界',
-    people: 'William J. Mitchell · 1972',
-    story: '树性质说每棵高度为 ℵ₂、各层小于 ℵ₂ 的树都有共尾分支。Mitchell 从弱紧致基数出发，经力迫得到 ℵ₂ 具有树性质的模型；在其他 ZFC 模型中存在 ℵ₂-Aronszajn 树。这里是模型构造，不是“弱紧致基数直接推出 ℵ₂ 树性质”。',
+    title: 'ℵ₂ 的树性质', kind: '与弱紧致基数等一致',
+    people: 'William J. Mitchell · 1972；Jack Silver · 1970 年代',
+    story: 'Mitchell 从弱紧致基数出发，经力迫得到 ℵ₂ 具有树性质的模型；反向下界来自 L 中的弱紧致基数。这里是等一致，不是弱紧致基数直接推出 ℵ₂ 树性质。',
     sources: [['Mitchell 1972 · DOI', 'https://doi.org/10.1016/0003-4843(72)90017-4']]
   },
   vl: {
@@ -42,9 +42,9 @@ const papers = {
     sources: [['Gödel 1938 · DOI', 'https://doi.org/10.1073/pnas.24.12.556'], ['Scott 原文', 'https://github.com/CMU-HoTT/scott/blob/main/pdfs/1961-measurable-cardinals-and-constructible-sets.pdf']]
   },
   pd: {
-    title: '投射决定性 PD', kind: 'ZFC 中不能证明；由适当 Woodin 基数假设推出',
+    title: '投射决定性 PD', kind: '与“每个有限 n 有 n 个 Woodin”模式等一致',
     people: 'Donald A. Martin、John R. Steel · 1988–1989',
-    story: 'Martin 与 Steel 用迭代树证明：足够多的 Woodin 基数（常用表述为 ω 个 Woodin 基数且上方有可测基数）推出每个投射集合对应的无限博弈可决定。由此得到投射实数集的多种正则性。单个 Woodin 基数不足以在此处标作 PD 的充分假设。',
+    story: 'Martin 与 Steel 用迭代树建立从 Woodin 基数到投射决定性的方向；内模型结果给出每个有限阶所需的逆向强度。作为整套公理模式，PD 与“对每个有限 n 存在 n 个 Woodin”等一致。真正无穷多个 Woodin 与 AD 对应。',
     sources: [['Martin–Steel 1989 · DOI', 'https://doi.org/10.1090/S0894-0347-1989-0955605-X']]
   },
   pfa: {
@@ -61,50 +61,81 @@ const papers = {
   }
 };
 
+const references = {
+  larson: ['Larson《A Brief History of Determinacy》', 'https://paulblarson.github.io/Cabal_Determinacy.pdf'],
+  welch: ['Welch 大基数与决定性讲义', 'https://people.maths.bris.ac.uk/~mapdw/tutorial4-June2014.pdf'],
+  steel: ['Steel《Derived Models Associated to Mice》', 'https://math.berkeley.edu/~steel/papers/tutorial3.pdf'],
+  steeldm: ['Steel 导出模型论文', 'https://math.berkeley.edu/~steel/papers/dm.pdf'],
+  solovay: ['Solovay 1970 · DOI', 'https://doi.org/10.2307/1970696'],
+  shelah: ['Shelah 1984 · DOI', 'https://doi.org/10.1007/BF02760522'],
+  mitchell: ['Mitchell 1972 · DOI', 'https://doi.org/10.1016/0003-4843(72)90017-4'],
+  harrington: ['Harrington 1978 · DOI', 'https://doi.org/10.2307/2273508'],
+  martinsteel: ['Martin–Steel 1989 · DOI', 'https://doi.org/10.1090/S0894-0347-1989-0955605-X'],
+  hauser: ['Hauser 投射绝对性论文 · DOI', 'https://doi.org/10.1016/0168-0072(94)00041-Z'],
+  goldstern: ['Goldstern–Kellner–Shelah 2019', 'https://annals.math.princeton.edu/wp-content/uploads/annals-v190-n1-p02-s.pdf'],
+  hamkins: ['Hamkins–Woodin 2004 · arXiv DOI', 'https://doi.org/10.48550/arXiv.math/0403165'],
+  precipitous: ['Jech–Magidor–Mitchell–Prikry 1980 · DOI', 'https://doi.org/10.2307/2273349']
+};
+
+Object.assign(papers, {
+  analytic: {title:'解析决定性（Π¹₁-Det）',kind:'无参数版本与 0# 存在等价',people:'Donald A. Martin · 1970；Leo Harrington · 1978',story:'Martin 从 0# 的不可分辨元证明无参数解析博弈决定性；Harrington 证明逆向。此处是细体、无实参数的 Π¹₁；若要求所有实参数，需相应地要求每个实数的 sharp 存在。',sources:[references.harrington,references.larson]},
+  delta2: {title:'Δ¹₂ 决定性',kind:'与单个 Woodin 基数等一致',people:'W. Hugh Woodin · 1989；逆向见 Koellner–Woodin 2010',story:'Woodin 找到这一层投射决定性的精确强度：存在一个 Woodin 基数。这里采用不带实参数的细体 Δ¹₂；粗体版本不可直接替换。',sources:[references.larson]},
+  projabs: {title:'投射绝对性',kind:'与“任意有限多个强基数”模式等一致',people:'Kai Hauser · 1995；W. Hugh Woodin（反向力迫构造）',story:'适当定义的投射公式在集合力迫下保持真值，其一致性强度与对每个有限 n 存在 n 个强基数的公理模式吻合。',sources:[references.hauser]},
+  ad: {title:'决定性公理 AD',kind:'与无穷多个 Woodin 基数等一致',people:'W. Hugh Woodin · 1980 年代；Koellner–Woodin · 2010',story:'Woodin 的导出模型给出从 Woodin 基数到 ZF+AD 的相容性构造；反向从 AD 得到相应大基数内模型。AD 与完整选择公理不相容，所以必须保留 ZF 背景。',sources:[references.larson,references.welch]},
+  adplus: {title:'AD⁺ + θ₀ < Θ',kind:'与 Woodin 极限及一枚 <λ-强基数等一致',people:'W. Hugh Woodin；John R. Steel（证明梗概，2009）',story:'Steel 的定理 15.1 精确配对 ZF+AD⁺+θ₀<Θ 与 ZFC 中“存在 Woodin 基数的极限 λ，且某 κ<λ 对所有 α<λ 都是 α-强”的假设。',sources:[references.steel]},
+  adr: {title:'实数博弈决定性 ADᵣ',kind:'与强基数及 Woodin 极限假设等一致',people:'W. Hugh Woodin；John R. Steel · 2009',story:'ADᵣ 要求玩家每步可选一个实数的博弈都可决定。对应的 ZFC 假设是存在 λ，它同时是 Woodin 基数和 <λ-强基数的极限。',sources:[references.steeldm,references.larson]},
+  projlm: {title:'所有投射实数集都可测',kind:'与不可达基数等一致',people:'Robert Solovay · 1970；Saharon Shelah · 1984',story:'这只量化投射集合，因而可与 ZFC 共存；其一致性强度仍达到不可达基数。与“所有实数集都可测”的 ZF+DC 理论并列，但两个理论的陈述不同。',sources:[references.solovay,references.shelah,references.goldstern]},
+  baire: {title:'所有实数集都有 Baire 性质',kind:'ZF+DC 背景下与 ZFC 等一致',people:'Saharon Shelah · 1984',story:'Shelah 的模型表明，ZF+DC 加上每个实数集都有 Baire 性质不需要不可达基数。与所有实数集可测的强度对照鲜明。',sources:[references.shelah]},
+  precip: {title:'ω₁ 上存在 precipitous ideal',kind:'与可测基数等一致',people:'Thomas Jech、Menachem Magidor、William Mitchell、Karel Prikry · 1980',story:'从可测基数经塌缩得到 ω₁ 上的 precipitous ideal；反向由泛超幂推出内模型中有可测基数。此结论不声称 ω₁ 本身在 ZFC 中可测。',sources:[references.precipitous]},
+});
+
 const tiers = [
-  {name:'三线', code:'TIER 01', summary:'以 ZF / ZFC 为基础，区分“能表述不可数对象”和“增加一致性强度”。', route:'基础理论与经典独立性', levels:[
-    {name:'ZF', formula:'Zermelo–Fraenkel', description:'保留集合论基本公理，不预设选择公理。', relation:'ZF 与 ZFC 等一致；这里的箭头只表示添加公理。', problems:['ac']},
-    {name:'ZFC', formula:'ZF + AC', description:'现代集合论常用背景。连续统假设、Souslin 假设和 Whitehead 问题在此仍独立。', problems:['ch','suslin','whitehead']}
-  ], connector:'dashed', note:'修订点：AC 的加入改变可证明命题，却不提高相对于 ZF 的一致性强度。'},
-  {name:'强三线', code:'TIER 02', summary:'原表以“存在 ZFC 模型”为标志；把模型含义限定为一般一阶模型。', route:'自我一致性界限', levels:[
-    {name:'ZFC + Con(ZFC)', formula:'“存在 ZFC 的模型”', description:'由完备性定理，Con(ZFC) 与存在一阶 ZFC 模型相应。第二不完备性定理解释了这一层为何超出 ZFC 自身。', problems:['con']}
-  ], note:'若另要求“传递模型”或“标准模型”，会得到更强的主张，不能与 Con(ZFC) 混用。'},
-  {name:'二线', code:'TIER 03', summary:'不可达与 Mahlo 基数；同时放入一个跨越选择公理背景的等一致性案例。', route:'反射与实数集正则性', levels:[
-    {name:'不可达基数', formula:'ZFC + “∃κ inaccessible”', description:'κ 为不可数、正则且强极限。Vκ 是 ZFC 的传递模型，因而严格超出“仅有 Con(ZFC)”的例子。'},
-    {name:'Solovay–Shelah 水平', formula:'ZF + DC + “所有实数集可测”', description:'与不可达基数等一致，但基础理论不同；这条虚线表示强度对应，不表示 ZFC 直接蕴含该命题。', problems:['lm'], branch:true},
-    {name:'Mahlo 基数', formula:'ZFC + “∃κ Mahlo”', description:'不可达基数在 κ 以下构成驻集；为更深的反射现象提供起点。'}
-  ], connectors:['dashed','dashed'], note:'原表在二线同时提到不可达与 Mahlo；这里明确二者内部还有强弱差异。'},
-  {name:'强二线', code:'TIER 04', summary:'划分性质与不可分辨元相关现象。把可比较的公理和旁支对象分开。', route:'树与划分性质', levels:[
-    {name:'弱紧致基数', formula:'ZFC + “∃κ weakly compact”', description:'典型刻画包括 κ→(κ)²₂；可作为构造 ℵ₂ 树性质模型的起点。', problems:['tp']},
-    {name:'Ramsey 基数', formula:'ZFC + “∃κ Ramsey”', description:'比弱紧致有更强的划分性质；原表所说的划分系列可在此继续展开。'}
-  ], note:'Jónsson 基数与 0# 属于相关研究线索，不能仅凭名称塞进这一条实线顺序。'},
-  {name:'一线', code:'TIER 05', summary:'可测、强、Woodin、强紧致和超紧致等主题；关键应用是内模型、决定性与力迫公理。', route:'滤子、嵌入与决定性', levels:[
-    {name:'可测基数', formula:'ZFC + “∃κ measurable”', description:'存在 κ-完备非主超滤。Scott 定理直接否定 V=L。', problems:['vl']},
-    {name:'强基数', formula:'ZFC + “∃κ strong”', description:'可比较嵌入对越来越高的 Vλ 的保留；一致性强度高于单个可测基数。'},
-    {name:'Woodin 基数', formula:'ZFC + “∃δ Woodin”', description:'大量局部强性质在 δ 以下汇聚，决定性研究从这里显著展开。'},
-    {name:'Woodin 基数列', formula:'ω 个 Woodin + 上方可测', description:'Martin–Steel 定理在适当大基数假设下推出投射决定性 PD。', problems:['pd']},
-    {name:'超紧致基数', formula:'ZFC + “∃κ supercompact”', description:'可用来构造 PFA 模型；强紧致与超强基数也在原表这一档，但这里不把它们强行排成单链。', problems:['pfa']}
-  ], connectors:['solid','solid','solid','solid'], note:'图上是精选路线，不宣称本 tier 所有大基数概念都有线性顺序。'},
-  {name:'超一线', code:'TIER 06', summary:'从可扩到巨大与 n-巨大；特别提醒“最小见证者的位置”不同于公理的一致性强度。', route:'更高的初等嵌入', levels:[
-    {name:'可扩基数', formula:'ZFC + extendible', description:'嵌入性质可跨任意高度延伸，处于超紧致之上。'},
-    {name:'巨大基数', formula:'ZFC + huge', description:'存在更强的闭包嵌入。最小巨大基数可能小于最小超紧致基数；这并不颠倒两种公理的相对一致性强度。'},
-    {name:'n-巨大系列', formula:'ZFC + n-huge', description:'沿有限次迭代继续增强。具体 n 的公理必须单独写明，不能用一个笼统名称代替证明。'}
-  ], note:'此处忠实保留原表关于“基数性与一致性强度可能呈相反次序”的提醒，并明确比较对象。'},
-  {name:'论天下', code:'TIER 07', summary:'进入 rank-into-rank 公理，讨论 I3 与 I2 等嵌入。', route:'秩内嵌入 · 第一段', levels:[
-    {name:'I3', formula:'j: Vλ → Vλ', description:'非平凡初等嵌入，临界点低于 λ。讨论时需说明嵌入的定义域、值域与背景理论。'},
-    {name:'I2 等增强', formula:'rank-into-rank', description:'在 I3 以上研究更强的嵌入结构。相关 HOD 问题是研究方向，不是从 I3 自动得到的定理。'}
-  ], note:'HOD 猜想未在图中被标为“已判定的独立性命题”。'},
-  {name:'论天中', code:'TIER 08', summary:'I1、I0 与相关增强；仍需清楚交代具体公理和嵌入对象。', route:'秩内嵌入 · 第二段', levels:[
-    {name:'I1', formula:'j: Vλ+1 → Vλ+1', description:'定义域扩展到 Vλ+1；与 I3 有明显强度区分。'},
-    {name:'I0', formula:'j: L(Vλ+1) → L(Vλ+1)', description:'作用于 L(Vλ+1) 的初等嵌入。属于标准 ZFC 框架内研究的极高强度假设之一。'}
-  ], note:'“接近无选择边界”是原表的领域描述，不是 I0 蕴含 Reinhardt / Berkeley 的箭头。'},
-  {name:'论天上', code:'TIER 09', branch:true, summary:'转入不采用完整选择公理的领域。具体假设与 ZFC 主线分支展示。', route:'ZF 下的高阶公理', levels:[
-    {name:'ZF + choiceless 大基数', formula:'需逐个指定公理', description:'例如 Berkeley 基数属于此类讨论。去掉 AC 后，“可测”“大小”“初等嵌入”等比较方式都须重新核实。', branch:true}
-  ], note:'原表称此区为“一阶的反选择领域”。网站暂不画它与 I0 的强度箭头；跨背景关系须以精确理论为单位证明。'},
-  {name:'论天最上', code:'TIER 10', branch:true, summary:'在显式类理论中讨论 Reinhardt 等公理，并记录形式化和一致性状态。', route:'类理论与全宇宙嵌入', levels:[
-    {name:'ZF / NBG / MK 的适当版本', formula:'先固定类理论与逻辑', description:'“j:V→V”涉及类嵌入，不能把它当作未经说明的普通 ZF 一阶句子。不同的类理论写法未必等价。', branch:true},
-    {name:'Reinhardt 型假设', formula:'非平凡 j:V→V', description:'与完整 AC 不相容。无选择背景下的一致性问题仍属前沿；这里不对安全性或可比较性作超出已知结果的保证。', branch:true}
-  ], connectors:['dashed'], note:'这一层与论天上之间只表示原 tier 的阅读顺序，不表示已证明的相对一致性严格次序。'}
+  {name:'三线',code:'TIER 01',summary:'基准一致性层：不同的经典理论与独立性命题，可以具有相同的相对一致性强度。',route:'ZFC 基准',bands:[
+    {label:'基准层',theories:[
+      ['ZF','不含选择公理'],['ZFC','ZF + AC'],['ZFC + CH','连续统假设成立'],['ZFC + ¬CH','连续统假设失败'],['ZFC + Souslin 假设','无 Souslin 直线'],['ZFC + ¬Souslin 假设','存在 Souslin 直线'],['ZF + DC + 所有实数集有 Baire 性质','Shelah 模型']
+    ],reason:'这些理论的相容性可由 ZFC 的相容性获得；这里的并列只表示等一致，不表示理论互相蕴含。',sources:[references.shelah],problems:['ac','ch','suslin','whitehead','baire']}
+  ],note:'CH、Souslin 假设和 Whitehead 问题两侧的答案都可以出现在基准层。'},
+  {name:'强三线',code:'TIER 02',summary:'把“存在 ZFC 的模型”作为真正高于 ZFC 基准层的一致性阶。',route:'自我一致性',bands:[
+    {label:'Con(ZFC) 层',theories:[['ZFC + Con(ZFC)','ZFC 自身一致'],['ZFC +「存在一个一阶 ZFC 模型」','由完备性定理对应'],['ZF + Con(ZF)','与 ZFC 形式化等一致']],reason:'这里的模型指一般一阶模型。若改成传递模型，强度会上升。',problems:['con']}
+  ],note:'第二不完备性定理解释了此层与三线的严格差异。'},
+  {name:'二线',code:'TIER 03',summary:'不可达基数对应实数集正则性；Mahlo 则另列为更强的基数公理。',route:'不可达 → Mahlo',bands:[
+    {label:'不可达层',theories:[['ZFC + 存在不可达基数','正则强极限 κ'],['ZF + DC + 每个实数集都 Lebesgue 可测','Solovay–Shelah 等一致性'],['ZFC + 每个投射实数集都 Lebesgue 可测','投射集版本']],reason:'两条可测性理论都与不可达基数等一致，但各自使用不同的基础公理或量化范围。',sources:[references.solovay,references.shelah,references.goldstern],problems:['lm','projlm']},
+    {label:'Mahlo 层',theories:[['ZFC + 存在 Mahlo 基数','其下不可达基数构成驻集']],reason:'原 tier 中的下一枚大基数；目前不附会未经核对的“经典问题”等一致式。',link:'solid'}
+  ],note:'同一 tier 内仍有严格的强度差异，因此每个档位单独成组。'},
+  {name:'强二线',code:'TIER 04',summary:'把树性质、不可分辨元和划分性质各自配到准确的强度层。',route:'弱紧致、0# 与 Ramsey',bands:[
+    {label:'弱紧致层',theories:[['ZFC + 存在弱紧致基数','κ 的树性质／划分性质'],['ZFC + ℵ₂ 具有树性质','Mitchell–Silver 等一致性'],['ZFC + 必然 c.c.c. 极大性原则','Hamkins–Woodin 等一致性']],reason:'ℵ₂ 树性质的上界由 Mitchell 的塌缩构造给出，下界由 L 中的弱紧致基数给出。',sources:[references.mitchell,references.hamkins],problems:['tp']},
+    {label:'0# 层',theories:[['ZFC + 0# 存在','L 的不可分辨元'],['ZFC + 无参数解析决定性 Π¹₁-Det','Martin–Harrington 定理']],reason:'这是细体、无实参数的理论等价型配对；带任意实参数的版本需要更强的假设。',sources:[references.harrington,references.larson],problems:['analytic'],link:'solid'},
+    {label:'Ramsey 层',theories:[['ZFC + 存在 Ramsey 基数','强化的划分性质']],reason:'单独陈列；与前两组的视觉次序只沿用原 tier 的阅读顺序。',link:'dashed'}
+  ],note:'虚线表示本图没有声称相邻两组存在严格的一致性强度箭头。'},
+  {name:'一线',code:'TIER 05',summary:'这一层展开为多个精确对应组。PD 的有限模式与 AD 的真正无穷序列分列。',route:'可测 → 决定性 → 超紧致',bands:[
+    {label:'可测层',theories:[['ZFC + 存在可测基数','κ-完备非主超滤'],['ZFC + ω₁ 上存在 precipitous ideal','Jech–Magidor–Mitchell–Prikry']],reason:'两个理论等一致。可测基数还直接推出 V ≠ L；后者是命题判定，不是另一种等一致理论。',sources:[references.precipitous],problems:['vl','precip']},
+    {label:'强基数模式层',theories:[['ZFC + 对每个有限 n 存在 n 个强基数','公理模式'],['ZFC + 投射绝对性','集合力迫下的精确版本']],reason:'投射绝对性的量词与力迫范围须按原定理理解。',sources:[references.hauser],problems:['projabs'],link:'dashed'},
+    {label:'单个 Woodin 层',theories:[['ZFC + 存在 Woodin 基数','一枚 Woodin'],['ZFC + Δ¹₂ 决定性','细体／无实参数版本']],reason:'Woodin 的精确等一致性结果；不可把 Δ¹₂ 换成整个 PD。',sources:[references.larson],problems:['delta2'],link:'dashed'},
+    {label:'PD 有限模式层',theories:[['ZFC + PD','所有投射博弈可决定'],['ZFC + {「存在 n 个 Woodin」: n∈ω}','每个有限 n 一条公理']],reason:'此处是公理模式：每个有限 n 各有一条证明要求；它不等于单条“存在无穷多个 Woodin”。',sources:[references.martinsteel,references.larson],problems:['pd'],link:'solid'},
+    {label:'AD / 真正无穷 Woodin 层',theories:[['ZFC + 存在无穷多个 Woodin 基数','同一模型中有 ω 序列'],['ZF + AD','所有整数博弈可决定'],['ZFC + L(ℝ) ⊨ AD','内模型决定性']],reason:'Woodin 的等一致性。ZF+AD 与完整 AC 冲突；三个理论并列仅指相对一致性强度相同。',sources:[references.larson,references.welch],problems:['ad'],link:'solid'},
+    {label:'AD⁺ + θ₀ < Θ 层',theories:[['ZFC + λ 为 Woodin 极限，且某 κ<λ 是 <λ-强','精确大基数假设'],['ZF + AD⁺ + θ₀ < Θ','Solovay 序列开始分层']],reason:'Woodin 的等一致性，见 Steel 定理 15.1。',sources:[references.steel],problems:['adplus'],link:'solid'},
+    {label:'ADᵣ 层',theories:[['ZFC + λ 同时是 Woodin 与 <λ-强基数的极限','导出模型假设'],['ZF + ADᵣ','实数选择的博弈可决定'],['ZF + AD + 每个实数集都是 Suslin','等价表述']],reason:'Woodin–Steel 的等一致性；末两项在 AD 背景下还可证明等价。',sources:[references.steeldm,references.larson],problems:['adr'],link:'solid'},
+    {label:'超紧致层',theories:[['ZFC + 存在超紧致基数','强闭包初等嵌入']],reason:'Baumgartner 从这里构造 PFA 模型。目前不把 PFA 与超紧致写作等一致。',problems:['pfa'],link:'dashed'}
+  ],note:'“ω 个 Woodin + 上方有可测基数”是推出 L(ℝ) ⊨ AD 的常用充分条件，不是 AD 的最小精确强度。'},
+  {name:'超一线',code:'TIER 06',summary:'可扩、巨大及 n-巨大公理。未找到可安全并列的经典等一致命题时，只列已确认的理论。',route:'高阶初等嵌入',bands:[
+    {label:'可扩层',theories:[['ZFC + 存在可扩基数','extendible']]},
+    {label:'巨大层',theories:[['ZFC + 存在巨大基数','huge']],link:'solid'},
+    {label:'n-巨大系列',theories:[['ZFC + 存在 n-巨大基数','固定有限 n']],reason:'n 必须逐一指定；不以一个笼统名称代替精确假设。',link:'solid'}
+  ],note:'最小见证基数在序数上的位置，与两个公理的一致性强度比较是不同问题。'},
+  {name:'论天下',code:'TIER 07',summary:'进入秩内嵌入；目前不附会未有可靠核对的等一致性命题。',route:'rank-into-rank 第一段',bands:[
+    {label:'I3',theories:[['ZFC + I3','非平凡 j:Vλ→Vλ']]},
+    {label:'I2',theories:[['ZFC + I2','更强的秩内嵌入']],link:'solid'}
+  ],note:'HOD 猜想属于研究问题，这里没有把它写作已判定的独立性命题。'},
+  {name:'论天中',code:'TIER 08',summary:'I1 与 I0 的定义域不同，按各自精确公理分组。',route:'rank-into-rank 第二段',bands:[
+    {label:'I1',theories:[['ZFC + I1','j:Vλ+1→Vλ+1']]},
+    {label:'I0',theories:[['ZFC + I0','j:L(Vλ+1)→L(Vλ+1)']],link:'solid'}
+  ],note:'跨到无选择的大基数分支时不沿用这些箭头。'},
+  {name:'论天上',code:'TIER 09',branch:true,summary:'无选择背景中的 Berkeley 等大基数另成分支。',route:'ZF 分支',bands:[
+    {label:'Berkeley 型假设',theories:[['ZF + 存在 Berkeley 基数','需指定精确定义与背景理论']],reason:'目前不与 I0 或 Reinhardt 画未经证明的等一致性连接。'}
+  ],note:'原 tier 的位置是导航安排，不自动给出与 ZFC 主线的相对一致性比较。'},
+  {name:'论天最上',code:'TIER 10',branch:true,summary:'全宇宙类嵌入需要明确类理论与逻辑背景。',route:'无选择类理论分支',bands:[
+    {label:'Reinhardt 型假设',theories:[['ZF / NBG / MK 的适当版本 + 非平凡 j:V→V','类嵌入须单独形式化']],reason:'与完整选择公理不相容；目前不宣称与 Berkeley 假设等一致。'}
+  ],note:'这一层与论天上之间只保留原 tier 的阅读顺序。'}
 ];
 
 const tierList = document.querySelector('#tier-list');
@@ -150,16 +181,32 @@ function renderDetail() {
   if(tier.branch)detail.append(element('div','branch-alert','本层属于无选择公理的研究线。虚线只表示主题或原 tier 的阅读顺序，不声称与 ZFC 主线有已证明的强弱关系。'));
   detail.append(element('p','route-label',tier.route));
   const list=element('div','level-list');
-  tier.levels.forEach((level,index)=>{
-    if(index>0){const kind=tier.connectors?.[index-1]||tier.connector||'solid';list.append(element('div',`connector${kind==='dashed'?' dashed':''}`));}
-    const card=element('article',`level${level.branch?' branch':''}`);
+  tier.bands.forEach((band,index)=>{
+    if(index>0){
+      const connector=element('div',`connector${band.link==='solid'?'':' dashed'}`);
+      connector.setAttribute('aria-label',band.link==='solid'?'已知强度上升':'阅读顺序；不主张严格强弱');
+      list.append(connector);
+    }
+    const card=element('article',`level${tier.branch?' branch':''}`);
     const top=element('div','level-top');
-    top.append(element('h3',null,level.name),element('span','formula',level.formula));
-    card.append(top,element('p',null,level.description));
-    if(level.relation)card.append(element('p','relation',level.relation));
-    if(level.problems?.length){
+    top.append(element('h3',null,band.label),element('span','equicon-label',band.theories.length>1?'≡ Con · 同一强度':'单独理论'));
+    card.append(top);
+    const theoryGrid=element('div','theory-grid');
+    band.theories.forEach(([name,description])=>{
+      const theory=element('div','theory-card');
+      theory.append(element('strong',null,name),element('small',null,description));
+      theoryGrid.append(theory);
+    });
+    card.append(theoryGrid);
+    if(band.reason)card.append(element('p','band-reason',band.reason));
+    if(band.sources?.length){
+      const sources=element('div','band-sources');
+      band.sources.forEach(([label,url])=>{const anchor=element('a',null,label+' ↗');anchor.href=url;anchor.target='_blank';anchor.rel='noopener noreferrer';sources.append(anchor);});
+      card.append(sources);
+    }
+    if(band.problems?.length){
       const row=element('div','problems');row.append(element('span','problems-label','关联命题 ↗'));
-      level.problems.forEach(id=>{
+      band.problems.forEach(id=>{
         const badge=element('button','problem-badge',papers[id].title);badge.type='button';badge.dataset.problemId=id;
         badge.setAttribute('aria-haspopup','dialog');badge.setAttribute('aria-expanded','false');
         badge.title='查看独立性证明与原始工作';
