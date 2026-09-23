@@ -10,4 +10,6 @@
 
 超一线以上补入可扩基数与二阶逻辑 ULST 数、巨大基数与类型省略紧致性、I0 与 ultraexacting 基数、Berkeley 基数与受限 Vopěnka 原理、真类多个弱 Reinhardt 与 Reinhardt 基数等对应；各框附原论文。I3 对 Laver table 的 q(n) 全函数性是单向推论，ZFC 中可证与否仍未解决。I1 的组合性质也是相容性构造，不是等一致性配对。未核对到精确等一致对应的公理保持单独理论。
 
+无选择公理的末两层改为偏序：Reinhardt 严格弱于 super-Reinhardt 和 Berkeley；super-Reinhardt 严格弱于 totally Reinhardt。club Berkeley 同时蕴含 Berkeley 与 totally Reinhardt；limit club Berkeley 蕴含 club Berkeley。普通 Berkeley 与 super-Reinhardt、totally Reinhardt 的一致性比较仍未解决。rank-Berkeley 可由 Reinhardt 推出，但二者是否等一致也是开放问题；不能把基数的大小顺序等同于理论的一致性强度。依据 [Bagaria–Koellner–Woodin](https://doi.org/10.1017/bsl.2019.28)、[Goldberg–Schlutzenberg](https://doi.org/10.4171/JEMS/1318) 及 [Choiceless Elementary Embeddings 的问题表](https://karagila.org/cheese/problems.pdf)。
+
 一线层另增 ZF+ADᵣ+「Θ 正则」的四项等一致组，包含 CH+ω₁ 上 ω₁-稠密理想及两种非平稳理想表述，依据 [Adolf 等人的论文](https://doi.org/10.48550/arXiv.2111.06220)。其上单列 LSA，依据 [Sargsyan–Trang 专著](https://doi.org/10.1017/9781009520683)说明定义、与 ADᵣ+Θ 正则的相对一致性比较及已知上界。LSA 蕴含 ¬ADᵣ，因此该箭头不表示直接蕴含；Woodin 极限及 PFA 只作为相容性上界。
