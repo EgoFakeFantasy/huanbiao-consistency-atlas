@@ -97,7 +97,7 @@ Object.assign(papers, {
   precip: {title:'ω₁ 上存在 precipitous ideal',kind:'与可测基数等一致',people:'Thomas Jech、Menachem Magidor、William Mitchell、Karel Prikry · 1980',story:'从可测基数经塌缩得到 ω₁ 上的 precipitous ideal；反向由泛超幂推出内模型中有可测基数。此结论不声称 ω₁ 本身在 ZFC 中可测。',sources:[references.precipitous]},
   realvalued: {title:'连续统是实值可测基数',kind:'与可测基数等一致',people:'Robert M. Solovay · 1971',story:'从可测基数出发，经随机实数力迫使连续统成为实值可测；反向可从实值可测性得到可测基数的内模型。此处的“实值可测”不等于所有实数集在原 Lebesgue 测度下可测。',sources:[references.realvalued]},
   laverq: {title:'Laver table 的 q(n) 对每个 n 都有定义',kind:'I3 下可证明；ZFC 中的可证性仍未解决',people:'Richard Laver · 1992 年预印本，1995 年发表',story:'设 p(m) 是 2^m 阶 Laver table 首行的周期，q(n)=min{m:p(m)≥2^n}。I3 给出的秩内嵌入使这些周期无界，因此 q 为全函数。这是 I3 的单向推论；不能据此声称 q 的全函数性与 I3 等一致，也不能声称已证明它独立于 ZFC。',sources:[references.laver,references.biane]},
-  i1forcing: {title:'I1 与 λ⁺、λ⁺⁺ 的树性质可相容',kind:'I1 给出相容性上界；不是等一致式',people:'Vincenzo Dimonte、Liuzhen Wu · 2015',story:'作者发展保持 I1(λ) 的力迫工具，构造它与多种 λ 附近组合性质共同成立的模型，包括 λ⁺ 和 λ⁺⁺ 上的树性质、GCH 首次失败等。论文没有将这些性质单独判为与 I1 等一致。',sources:[references.dimontewu]},
+  i1forcing: {title:'I1 与 λ⁺、λ⁺⁺ 的树性质可相容',kind:'I1 给出相容性上界；不是等一致式',people:'Vincenzo Dimonte、Liuzhen Wu · 2015',story:'作者发展保持 I1(λ) 的力迫工具，分别研究它与多种 λ 附近组合性质的相容性，例子包括 λ⁺ 或 λ⁺⁺ 上的树性质、GCH 首次失败等。论文没有将这些性质单独判为与 I1 等一致。',sources:[references.dimontewu]},
   exacting: {title:'exacting 基数的位置',kind:'一致性强度严格介于 I3 与 I2 之间',people:'Juan Pablo Aguilera、Joan Bagaria、Gabriel Goldberg、Philipp Lücke · 2025',story:'论文的推论 5.11 给出严格分层：Con(ZFC+I2) 强于 Con(ZFC+存在 exacting 基数)，后者又强于 Con(ZFC+I3)。因此把它单设一档，不与两端并列。',sources:[references.beyondhod]},
   i2hod: {title:'I2 与 HOD 假设的相容性结果',kind:'从 I2 得到相对一致性；非等一致',people:'Aguilera、Bagaria、Goldberg、Lücke · 2025',story:'论文推论 5.6 证明：若 ZFC+I2 一致，则 ZFC 与 HOD 假设、某个 exacting 基数及其上方一个可扩基数一起也一致。这是内模型／力迫的相容性结论，不表示 I2 直接推出 HOD 假设。',sources:[references.beyondhod]},
   i0hod: {title:'ultraexacting 与 HOD 猜想',kind:'同强度理论的结构结果',people:'Aguilera、Bagaria、Goldberg、Lücke · 2025',story:'论文将 ultraexacting 基数与 I0 配成等一致理论，并证明 ultraexacting 可用带序数可定义谓词的初等自嵌入刻画。它们的存在与 V=HOD 不相容；这不是将 HOD 猜想本身标成已解决。',sources:[references.beyondhod]},
@@ -145,7 +145,7 @@ const tiers = [
     {label:'I2',theories:[['ZFC + I2','更强的秩内嵌入']],reason:'I2 还给出 HOD 假设与 exacting、上方可扩基数共同成立的相对一致性。',sources:[references.beyondhod],problems:['i2hod'],link:'solid'}
   ],note:'I3 对 q(n) 是单向判定，不能据此推断 q(n) 与 I3 等一致或已知独立于 ZFC。'},
   {name:'论天中',code:'TIER 08',summary:'I1 添入组合性质的相容性工作；I0 添入已证明的同强度理论。',route:'rank-into-rank 第二段',bands:[
-    {label:'I1',theories:[['ZFC + I1','j:Vλ+1→Vλ+1']],reason:'I1(λ) 能与 λ⁺、λ⁺⁺ 的树性质及其他 λ 附近组合性质同时相容；这些性质不在此被宣称等一致。',sources:[references.dimontewu],problems:['i1forcing']},
+    {label:'I1',theories:[['ZFC + I1','j:Vλ+1→Vλ+1']],reason:'I1(λ) 与 λ⁺ 或 λ⁺⁺ 的树性质等组合性质有分别构造的相容性结果；这里不宣称它们同时成立或等一致。',sources:[references.dimontewu],problems:['i1forcing']},
     {label:'I0',theories:[['ZFC + I0','j:L(Vλ+1)→L(Vλ+1)'],['ZFC + 存在 ultraexacting 基数','Aguilera–Bagaria–Goldberg–Lücke']],reason:'2025 年论文定理 A 证明两者等一致；并非断言两个公理在同一模型中等价。',sources:[references.beyondhod],problems:['i0hod'],link:'solid'}
   ],note:'I1 的组合结论是力迫相容性结果；I0 的 ultraexacting 配对才是等一致性结果。'},
   {name:'论天上',code:'TIER 09',branch:true,summary:'Berkeley 与 rank-Berkeley 在 ZF 背景下各有精确的 Vopěnka 原理对应。',route:'ZF 分支',bands:[
