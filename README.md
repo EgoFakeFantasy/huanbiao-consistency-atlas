@@ -6,6 +6,8 @@
 
 ZFC 之前新增算术段，从 Robinson 算术 Q，经 EFA、PRA/RCA₀/WKL₀、PA/ACA₀、ATR₀、Π¹₁-CA₀、完整二阶算术 Z₂，到每个有限 n 的 Zₙ，终点为 Zω。这里的 **ω 阶算术**依用户指定，指所有有限类型的理论并集，不引入新的无穷类型。PRA、IΣ₁、RCA₀、WKL₀ 等一致，PA 与 ACA₀ 等一致；即使 WKL₀ 比 RCA₀ 能证明更多二阶命题，也不能画成严格一致性强度箭头。参考 [Simpson《二阶算术子系统》](https://doi.org/10.1017/CBO9780511581007)与 [Schindler–Cheng 的高阶算术研究](https://www.uni-muenster.de/FB10/u/rds/cheng_yong_rds.pdf)。Q 与 EFA 附近仅按理论扩张排布，虚线不声称严格一致性差距。
 
+“算术层：Q—Zω”是导航中的 **TIER 00**。桌面端的层次导航会保持在视野内；手机端右下角的“选择层次”可随时返回导航。页面资源使用版本参数，避免旧脚本缓存掩盖新增层次。每个 tier 上方都有关系区，分别标注已证的等一致或单向推论、命题判定，以及有文献依据的开放问题；“本图未核实”不等同于数学公开问题。[Friedman–Holy](https://www.logic.univie.ac.at/~dsyfriedman/papers/joint.peter.acc.pdf)讨论 PFA 与超紧致基数之间仍未闭合的一致性强度差距。
+
 “世界基数”tier 以存在一枚 worldly cardinal（即 Vκ⊨ZFC）为起点。Con(ZFC) 层及传递 ZFC 模型层是前置档；[Hamkins 的强度链](https://jdh.hamkins.org/otherwordly-cardinals/)给出 worldly、真类多个 worldly、otherworldly、真类多个 otherworldly、totally otherworldly、真类多个 totally otherworldly，最后到不可达基数的严格一致性强度上升。worldly 不要求正则；[最小 worldly 基数的共尾度为 ω](https://jdh.hamkins.org/worldly-cardinals-are-not-always-downwards-absolute/)。[Kelley–Morse 类理论](https://jdh.hamkins.org/km-implies-conzfc/)另列为该区间的旁支，与相邻 otherworldly 档仅以阅读虚线连接；不宣称精确比较。
 
 典型对应组包括 ZF+AD ≡Con ZFC+存在无穷多个 Woodin 基数、ZFC+PD ≡Con 每个有限 n 各有 n 个 Woodin 基数的公理模式、ZF+ADᵣ ≡Con 同时为 Woodin 与 <λ-强基数之极限的 λ、ZF+DC+所有实数集可测 ≡Con ZFC+不可达基数。此处的 ≡Con 表示相对一致性同强度，不表示两个理论互相蕴含。PFA 只标出来自超紧致基数的相容性构造。
