@@ -87,7 +87,9 @@ const references = {
   biane: ['Biane《Laver tables and combinatorics》· DOI', 'https://doi.org/10.48550/arXiv.1810.00548'],
   dimontewu: ['Dimonte–Wu 2015 · DOI', 'https://doi.org/10.48550/arXiv.1510.03287'],
   adthetareg: ['Adolf–Sargsyan–Trang–Wilson–Zeman · DOI', 'https://doi.org/10.48550/arXiv.2111.06220'],
-  lsabook: ['Sargsyan–Trang《The Largest Suslin Axiom》· DOI', 'https://doi.org/10.1017/9781009520683']
+  lsabook: ['Sargsyan–Trang《The Largest Suslin Axiom》· DOI', 'https://doi.org/10.1017/9781009520683'],
+  steelmouse: ['Steel《Mouse Pairs and Suslin Cardinals》· DOI', 'https://doi.org/10.1142/9789819806584_0013'],
+  steelmousepdf: ['Steel 作者公开稿 · 第 6 节', 'https://math.berkeley.edu/~steel/papers/mousepairs.suslina.pdf']
 };
 
 Object.assign(papers, {
@@ -99,6 +101,7 @@ Object.assign(papers, {
   adr: {title:'实数博弈决定性 ADᵣ',kind:'与强基数及 Woodin 极限假设等一致',people:'W. Hugh Woodin；John R. Steel · 2009',story:'ADᵣ 要求玩家每步可选一个实数的博弈都可决定。对应的 ZFC 假设是存在 λ，它同时是 Woodin 基数和 <λ-强基数的极限。',sources:[references.steeldm,references.larson]},
   adthetareg: {title:'ADᵣ + Θ 正则',kind:'与多种稠密理想理论等一致',people:'Dominik Adolf、Grigor Sargsyan、Nam Trang、Trevor Wilson、Martin Zeman · 2022 年预印本；2024 年发表',story:'Θ 是实数集所能满射到的序数的上确界。论文定理 1.5 将 ZF+ADᵣ+「Θ 为正则基数」与 ZFC+CH+「ω₁ 上有 ω₁-稠密理想」配对；推论 1.6 和定理 1.10 还给出非平稳理想版本。证明结合决定性模型上的力迫与核心模型归纳。CH 是该对应理论的一部分。',sources:[references.adthetareg]},
   lsa: {title:'最大 Suslin 公理 LSA',kind:'一致性强度高于 ADᵣ + Θ 正则；LSA 蕴含 ¬ADᵣ',people:'W. Hugh Woodin（提出）；Grigor Sargsyan、Nam Trang · 2024 年专著',story:'LSA 是 ZF+AD⁺，并要求存在最大的 Suslin 基数且它对序数可定义满射不可达。Sargsyan–Trang 研究其最小模型，证明其满足 Mouse Set Conjecture；PFA 可给出最小 LSA 模型，Woodin 基数的 Woodin 极限给出相容性上界。这些是单向上界，不是与 LSA 等一致的配对。LSA 蕴含 ¬ADᵣ，所以此处的向上箭头仅比较一致性强度。',sources:[references.lsabook]},
+  lsaplus: {title:'LSA⁺ 蕴含 LSA',kind:'直接蕴含已证；严格一致性强度尚未证明',people:'John R. Steel · 2023 年修订稿；2025 年发表',story:'Steel 在《Mouse Pairs and Suslin Cardinals》定义 6.1 中令 LSA⁺ 为 AD⁺ 加上“存在实数集 A，它不属于任何 OD(s)，其中 s 是取值于某个 α<Θ 的可数序数序列”。命题 6.2 证明 LSA⁺ 蕴含 LSA：Suslin 且余 Suslin 的集合可由这样的序列定义，而见证 A 不可如此定义。原文说明，LSA⁺ 是否具有严格更高的一致性强度尚未证明；定理 6.3 给出来自 least branch hod pair 的单向相容性上界。',sources:[references.steelmouse,references.steelmousepdf]},
   projlm: {title:'所有投射实数集都可测',kind:'与不可达基数等一致',people:'Robert Solovay · 1970；Saharon Shelah · 1984',story:'这只量化投射集合，因而可与 ZFC 共存；其一致性强度仍达到不可达基数。与“所有实数集都可测”的 ZF+DC 理论并列，但两个理论的陈述不同。',sources:[references.solovay,references.shelah,references.goldstern]},
   baire: {title:'所有实数集都有 Baire 性质',kind:'ZF+DC 背景下与 ZFC 等一致',people:'Saharon Shelah · 1984',story:'Shelah 的模型表明，ZF+DC 加上每个实数集都有 Baire 性质不需要不可达基数。与所有实数集可测的强度对照鲜明。',sources:[references.shelah]},
   precip: {title:'ω₁ 上存在 precipitous ideal',kind:'与可测基数等一致',people:'Thomas Jech、Menachem Magidor、William Mitchell、Karel Prikry · 1980',story:'从可测基数经塌缩得到 ω₁ 上的 precipitous ideal；反向由泛超幂推出内模型中有可测基数。此结论不声称 ω₁ 本身在 ZFC 中可测。',sources:[references.precipitous]},
@@ -129,7 +132,7 @@ const tiers = [
     {label:'0# 层',theories:[['ZFC + 0# 存在','L 的不可分辨元'],['ZFC + 无参数解析决定性 Π¹₁-Det','Martin–Harrington 定理']],reason:'这是细体、无实参数的理论等价型配对；带任意实参数的版本需要更强的假设。',sources:[references.harrington,references.larson],problems:['analytic'],link:'solid'},
     {label:'Ramsey 层',theories:[['ZFC + 存在 Ramsey 基数','强化的划分性质']],reason:'单独陈列；与前两组的视觉次序只沿用原 tier 的阅读顺序。',link:'dashed'}
   ],note:'虚线表示本图没有声称相邻两组存在严格的一致性强度箭头。'},
-  {name:'一线',code:'TIER 05',summary:'决定性层继续细分至 ADᵣ+Θ 正则与 LSA；同框和箭头分别表示等一致与相对一致性增强。',route:'可测 → ADᵣ → Θ 正则 → LSA → 超紧致',bands:[
+  {name:'一线',code:'TIER 05',summary:'决定性层继续细分至 ADᵣ+Θ 正则、LSA 与 LSA⁺；直接蕴含和严格强度上升分开标记。',route:'可测 → ADᵣ → Θ 正则 → LSA → LSA⁺',bands:[
     {label:'可测层',theories:[['ZFC + 存在可测基数','κ-完备非主超滤'],['ZFC + ω₁ 上存在 precipitous ideal','Jech–Magidor–Mitchell–Prikry'],['ZFC + 连续统实值可测','Solovay 的随机实数模型']],reason:'三种理论等一致。可测基数还直接推出 V ≠ L；后者是命题判定。',sources:[references.precipitous,references.realvalued],problems:['vl','precip','realvalued']},
     {label:'强基数模式层',theories:[['ZFC + 对每个有限 n 存在 n 个强基数','公理模式'],['ZFC + 投射绝对性','集合力迫下的精确版本']],reason:'投射绝对性的量词与力迫范围须按原定理理解。',sources:[references.hauser],problems:['projabs'],link:'dashed'},
     {label:'单个 Woodin 层',theories:[['ZFC + 存在 Woodin 基数','一枚 Woodin'],['ZFC + Δ¹₂ 决定性','细体／无实参数版本']],reason:'Woodin 的精确等一致性结果；不可把 Δ¹₂ 换成整个 PD。',sources:[references.larson],problems:['delta2'],link:'dashed'},
@@ -139,8 +142,9 @@ const tiers = [
     {label:'ADᵣ 层',theories:[['ZFC + λ 同时是 Woodin 与 <λ-强基数的极限','导出模型假设'],['ZF + ADᵣ','实数选择的博弈可决定'],['ZF + AD + 每个实数集都是 Suslin','等价表述']],reason:'Woodin–Steel 的等一致性；末两项在 AD 背景下还可证明等价。',sources:[references.steeldm,references.larson],problems:['adr'],link:'solid'},
     {label:'ADᵣ + Θ 正则层',theories:[['ZF + ADᵣ + Θ 为正则基数','实数博弈决定性'],['ZFC + CH + ω₁ 上存在 ω₁-稠密理想','定理 1.5'],['ZFC + CH + NSω₁ 在稠密多个条件下为 ω₁-稠密','推论 1.6'],['ZFC + NS 在 Pω₁(ℝ) 上强且伪齐性','定理 1.10']],reason:'四项在相对一致性强度上相同；CH 只出现在相应的两个 ZFC 理想理论中，不能从其他框里省略或移入。',sources:[references.adthetareg],problems:['adthetareg'],link:'solid'},
     {label:'最大 Suslin 公理 LSA 层',theories:[['ZF + LSA','AD⁺ + 最大 Suslin 基数为 OD-不可达']],reason:'LSA 的一致性强度高于 ADᵣ+Θ 正则，但 LSA 本身蕴含 ¬ADᵣ；实线仅比较一致性强度。PFA 与 Woodin 极限层提供相容性上界，目前不把它们并列为等一致。',sources:[references.lsabook],problems:['lsa'],link:'solid'},
+    {label:'LSA⁺ 层',theories:[['ZF + LSA⁺','AD⁺ + ∃A⊆ℝ ∀α<Θ ∀s:ω→α (A∉OD(s))']],reason:'Steel 定义 6.1 与命题 6.2：LSA⁺ 直接蕴含 LSA。它们是否有严格不同的一致性强度，原文明确列为尚未证明；这里单列理论，不与 LSA 同框标成等一致。定理 6.3 给出 least branch hod pair 假设下的相容性上界。',sources:[references.steelmouse,references.steelmousepdf],problems:['lsaplus'],link:'implication'},
     {label:'超紧致层',theories:[['ZFC + 存在超紧致基数','强闭包初等嵌入']],reason:'Baumgartner 从这里构造 PFA 模型。目前不把 PFA 与超紧致写作等一致。',problems:['pfa'],link:'dashed'}
-  ],note:'LSA ⟹ ¬ADᵣ，故其位置表示相对一致性强度，不表示公理蕴含。“Woodin 极限的 Woodin 基数 ⟹ Con(LSA)”是已知上界，不是等一致结论。'},
+  ],note:'LSA ⟹ ¬ADᵣ；LSA⁺ ⟹ LSA，但严格一致性强度差异未证。“Woodin 极限的 Woodin 基数 ⟹ Con(LSA)”是已知上界，不是等一致结论。'},
   {name:'超一线',code:'TIER 06',summary:'以模型论刻画补足可扩与巨大层；同框只放已核对的等价或等一致理论。',route:'可扩 → Vopěnka → 巨大',bands:[
     {label:'可扩层',theories:[['ZFC + 存在可扩基数','extendible'],['ZFC + 二阶逻辑 L² 的 ULST 数存在','该数恰是最小可扩基数']],reason:'Boney–Osinski 定理 6.2 给出同一模型内的精确刻画：最小可扩基数 = ULST(L²)。',sources:[references.bonneyosinski]},
     {label:'C⁽ⁿ⁾-可扩系列（固定 n≥1）',theories:[['ZFC + 存在 C⁽ⁿ⁾-可扩基数','逐一固定 n'],['ZFC + sort logic Lˢ⁽ⁿ⁾ 的 ULST 数存在','最小 C⁽ⁿ⁾-可扩基数']],reason:'定理 6.3 对每个固定 n 给出精确对应；不同 n 之间不可视为同一强度。',sources:[references.bonneyosinski],link:'solid'},
@@ -218,8 +222,9 @@ function renderDetail() {
   const list=element('div','level-list');
   tier.bands.forEach((band,index)=>{
     if(index>0){
-      const connector=element('div',`connector${band.link==='solid'?'':' dashed'}`);
-      connector.setAttribute('aria-label',band.link==='solid'?'已知强度上升':'阅读顺序；不主张严格强弱');
+      const connector=element('div',`connector${band.link==='solid'?'':band.link==='implication'?' implies':' dashed'}`);
+      connector.setAttribute('aria-label',band.link==='solid'?'已知强度上升':band.link==='implication'?'反向公理直接蕴含；严格一致性强度未证':'阅读顺序；不主张严格强弱');
+      if(band.link==='implication')connector.append(element('span','connector-label','直接蕴含 · 严格强度未证'));
       list.append(connector);
     }
     const card=element('article',`level${tier.branch?' branch':''}`);
