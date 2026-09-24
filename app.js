@@ -50,8 +50,8 @@ const papers = {
   pfa: {
     title: '适当力迫公理 PFA', kind: '相对于 ZFC 独立；超紧致基数给出相容性上界',
     people: 'James E. Baumgartner · 1980 年代；1984 年发表',
-    story: 'Baumgartner 利用超紧致基数作适当力迫迭代，构造满足 PFA 的模型。PFA 蕴含 ¬CH，并能解决许多 ℵ₁ 组合问题。标注“从超紧致出发可构造 PFA 模型”比写成“超紧致直接推出 PFA”准确。',
-    sources: [['Baumgartner 1984 · DOI', 'https://doi.org/10.1016/B978-0-444-86580-9.50024-0']]
+    story: 'Baumgartner 从超紧致基数出发，经适当力迫迭代构造 PFA 模型。PFA 蕴含 ¬CH；Steel 于 2005 年进一步证明 PFA 蕴含 L(ℝ)⊨AD。这条链给出超紧致对实数集决定性的另一种相容性解释；超紧致本身并不保证原模型满足 PFA。',
+    sources: [['Baumgartner 1984 · DOI', 'https://doi.org/10.1016/B978-0-444-86580-9.50024-0'],['Steel 2005 · DOI','https://doi.org/10.2178/jsl/1129642125']]
   },
   suslin: {
     title: 'Souslin 假设', kind: '相对于 ZFC 独立',
@@ -89,7 +89,14 @@ const references = {
   adthetareg: ['Adolf–Sargsyan–Trang–Wilson–Zeman · DOI', 'https://doi.org/10.48550/arXiv.2111.06220'],
   lsabook: ['Sargsyan–Trang《The Largest Suslin Axiom》· DOI', 'https://doi.org/10.1017/9781009520683'],
   steelmouse: ['Steel《Mouse Pairs and Suslin Cardinals》· DOI', 'https://doi.org/10.1142/9789819806584_0013'],
-  steelmousepdf: ['Steel 作者公开稿 · 第 6 节', 'https://math.berkeley.edu/~steel/papers/mousepairs.suslina.pdf']
+  steelmousepdf: ['Steel 作者公开稿 · 第 6 节', 'https://math.berkeley.edu/~steel/papers/mousepairs.suslina.pdf'],
+  mitchellcover: ['Mitchell《The Covering Lemma》· 第 2 节', 'https://people.clas.ufl.edu/wjm/files/covering.pdf'],
+  mitchellcore: ['Mitchell 1984 · DOI', 'https://doi.org/10.1017/S030500410006151X'],
+  gitik1989: ['Gitik 1989 · DOI', 'https://doi.org/10.1016/0168-0072(89)90069-9'],
+  gitik1991: ['Gitik 1991 · DOI', 'https://doi.org/10.1016/0168-0072(91)90016-F'],
+  woodin1988: ['Woodin 1988 · DOI', 'https://doi.org/10.1073/pnas.85.18.6587'],
+  shelahwoodin: ['Shelah–Woodin 1990 · DOI', 'https://doi.org/10.1007/BF02801471'],
+  steelpfa: ['Steel 2005 · DOI', 'https://doi.org/10.2178/jsl/1129642125']
 };
 
 Object.assign(papers, {
@@ -106,6 +113,13 @@ Object.assign(papers, {
   baire: {title:'所有实数集都有 Baire 性质',kind:'ZF+DC 背景下与 ZFC 等一致',people:'Saharon Shelah · 1984',story:'Shelah 的模型表明，ZF+DC 加上每个实数集都有 Baire 性质不需要不可达基数。与所有实数集可测的强度对照鲜明。',sources:[references.shelah]},
   precip: {title:'ω₁ 上存在 precipitous ideal',kind:'与可测基数等一致',people:'Thomas Jech、Menachem Magidor、William Mitchell、Karel Prikry · 1980',story:'从可测基数经塌缩得到 ω₁ 上的 precipitous ideal；反向由泛超幂推出内模型中有可测基数。此结论不声称 ω₁ 本身在 ZFC 中可测。',sources:[references.precipitous]},
   realvalued: {title:'连续统是实值可测基数',kind:'与可测基数等一致',people:'Robert M. Solovay · 1971',story:'从可测基数出发，经随机实数力迫使连续统成为实值可测；反向可从实值可测性得到可测基数的内模型。此处的“实值可测”不等于所有实数集在原 Lebesgue 测度下可测。',sources:[references.realvalued]},
+  mitchellorder: {title:'可测基数的 Mitchell 序',kind:'测度结构的细分；此处不宣称有独立性命题的精确配对',people:'William J. Mitchell · 1970 年代；1984 年系统研究',story:'对同一可测基数 κ 上的正规测度 U、W，若 U 属于由 W 形成的超幂 Ult(V,W)，写作 U ◁ W。Mitchell 序 o(κ) 衡量这个良基关系的秩；o(κ)≥2 表示测度之间已有非平凡层级。它为下方的 κ⁺⁺ 阈值提供刻度。',sources:[references.mitchellcore,references.mitchellcover]},
+  gchmeas: {title:'可测基数处 GCH 失败',kind:'与 ∃κ o(κ)=κ⁺⁺ 等一致',people:'William J. Mitchell · 1984；Moti Gitik · 1990 年代',story:'问题是可测基数 κ 能否满足 2^κ>κ⁺。Mitchell 序达到 κ⁺⁺ 可经力迫给出这样的模型；反向核心模型分析把 GCH 在可测基数处的失败转化为同等级的测度序列。等一致只比较理论能否有模型，不表示每个见证 κ 都有 o(κ)=κ⁺⁺。',sources:[references.mitchellcover,references.mitchellcore]},
+  schfail: {title:'奇异基数假设 SCH 失败',kind:'与 ∃κ o(κ)=κ⁺⁺ 等一致；严格强于 0♯ 的必要条件',people:'Moti Gitik · 1989、1991',story:'这里的 ¬SCH 指某个奇异强极限 μ 满足 2^μ>μ⁺。Gitik 先由 o(κ)=κ⁺⁺ 构造失败模型，再证明逆向一致性下界。Jensen 的覆盖引理还给出 ¬SCH ⇒ 0♯ 存在；这一单向蕴含远不足以把 0♯ 与 ¬SCH 放进同一强度框。',sources:[references.gitik1989,references.gitik1991,references.mitchellcover]},
+  schsharp: {title:'SCH 失败必有 0♯',kind:'单向必要条件；不构成等一致',people:'Ronald Jensen · 1970 年代；William J. Mitchell（综述）',story:'Jensen 覆盖引理推出：若 0♯ 不存在，则每个奇异强极限基数都满足 SCH。因此 ZFC+¬SCH 推出 0♯ 存在。但 ¬SCH 的精确相对一致性强度达到 o(κ)=κ⁺⁺，不能把它和单个 0♯ 并列。',sources:[references.mitchellcover,references.gitik1991]},
+  pdregular: {title:'投射实数集的正则性',kind:'PD 的直接推论；非等一致配对',people:'Donald A. Martin、John R. Steel · 1989',story:'PD 判定所有投射博弈，从而所有投射实数集都 Lebesgue 可测、具有 Baire 性质及完美集性质。这里是从决定性导出的正则性结论；它们单独作为理论时不能直接并列为 PD 的精确强度。',sources:[references.martinsteel]},
+  lrtrees: {title:'L(ℝ) 中实数集的决定性',kind:'超紧致基数的直接推论；非精确等一致',people:'W. Hugh Woodin · 1988',story:'Woodin 证明：若存在超紧致基数，则 L(ℝ) 的每个实数集是弱齐性树的投影，由此 L(ℝ) 满足 AD。这个内模型结论不能读成 V 的每个实数集都可决定；L(ℝ)⊨AD 已在无穷 Woodin 层列作较低强度的等一致理论。',sources:[references.woodin1988]},
+  lrregular: {title:'L(ℝ) 中实数集的正则性',kind:'超紧致基数的直接推论；限定在内模型 L(ℝ)',people:'Saharon Shelah、W. Hugh Woodin · 1990',story:'Shelah–Woodin 证明，超紧致基数使 L(ℝ) 的每个实数集都 Lebesgue 可测并具有 Baire 性质，且 L(ℝ) 中不存在实数的良序。由 L(ℝ) 中的决定性还得到完美集性质。完整 ZFC 中当然仍有不可测的实数集，因此 L(ℝ) 的范围不能省略。',sources:[references.shelahwoodin,references.woodin1988]},
   laverq: {title:'Laver table 的 q(n) 对每个 n 都有定义',kind:'I3 下可证明；ZFC 中的可证性仍未解决',people:'Richard Laver · 1992 年预印本，1995 年发表',story:'设 p(m) 是 2^m 阶 Laver table 首行的周期，q(n)=min{m:p(m)≥2^n}。I3 给出的秩内嵌入使这些周期无界，因此 q 为全函数。这是 I3 的单向推论；不能据此声称 q 的全函数性与 I3 等一致，也不能声称已证明它独立于 ZFC。',sources:[references.laver,references.biane]},
   i1forcing: {title:'I1 与 λ⁺、λ⁺⁺ 的树性质可相容',kind:'I1 给出相容性上界；不是等一致式',people:'Vincenzo Dimonte、Liuzhen Wu · 2015',story:'作者发展保持 I1(λ) 的力迫工具，分别研究它与多种 λ 附近组合性质的相容性，例子包括 λ⁺ 或 λ⁺⁺ 上的树性质、GCH 首次失败等。论文没有将这些性质单独判为与 I1 等一致。',sources:[references.dimontewu]},
   exacting: {title:'exacting 基数的位置',kind:'一致性强度严格介于 I3 与 I2 之间',people:'Juan Pablo Aguilera、Joan Bagaria、Gabriel Goldberg、Philipp Lücke · 2025',story:'论文的推论 5.11 给出严格分层：Con(ZFC+I2) 强于 Con(ZFC+存在 exacting 基数)，后者又强于 Con(ZFC+I3)。因此把它单设一档，不与两端并列。',sources:[references.beyondhod]},
@@ -129,22 +143,24 @@ const tiers = [
   ],note:'同一 tier 内仍有严格的强度差异，因此每个档位单独成组。'},
   {name:'强二线',code:'TIER 04',summary:'把树性质、不可分辨元和划分性质各自配到准确的强度层。',route:'弱紧致、0# 与 Ramsey',bands:[
     {label:'弱紧致层',theories:[['ZFC + 存在弱紧致基数','κ 的树性质／划分性质'],['ZFC + ℵ₂ 具有树性质','Mitchell–Silver 等一致性'],['ZFC + 必然 c.c.c. 极大性原则','Hamkins–Woodin 等一致性']],reason:'ℵ₂ 树性质的上界由 Mitchell 的塌缩构造给出，下界由 L 中的弱紧致基数给出。',sources:[references.mitchell,references.hamkins],problems:['tp']},
-    {label:'0# 层',theories:[['ZFC + 0# 存在','L 的不可分辨元'],['ZFC + 无参数解析决定性 Π¹₁-Det','Martin–Harrington 定理']],reason:'这是细体、无实参数的理论等价型配对；带任意实参数的版本需要更强的假设。',sources:[references.harrington,references.larson],problems:['analytic'],link:'solid'},
+    {label:'0# 层',theories:[['ZFC + 0# 存在','L 的不可分辨元'],['ZFC + 无参数解析决定性 Π¹₁-Det','Martin–Harrington 定理']],reason:'解析决定性是细体、无实参数的等价型配对。Jensen 覆盖引理还表明 ¬SCH 必有 0♯；这只是单向必要条件，¬SCH 的精确强度另列在 Mitchell 序层。',sources:[references.harrington,references.larson,references.mitchellcover],problems:['analytic','schsharp'],link:'solid'},
     {label:'Ramsey 层',theories:[['ZFC + 存在 Ramsey 基数','强化的划分性质']],reason:'单独陈列；与前两组的视觉次序只沿用原 tier 的阅读顺序。',link:'dashed'}
   ],note:'虚线表示本图没有声称相邻两组存在严格的一致性强度箭头。'},
-  {name:'一线',code:'TIER 05',summary:'决定性层继续细分至 ADᵣ+Θ 正则、LSA 与 LSA⁺；直接蕴含和严格强度上升分开标记。',route:'可测 → ADᵣ → Θ 正则 → LSA → LSA⁺',bands:[
+  {name:'一线',code:'TIER 05',summary:'以 Mitchell 序定位 GCH 与 SCH 的失败，再细分决定性、LSA 与超紧致的实数集结论。',route:'可测 → Mitchell 序 → ADᵣ → LSA → 超紧致',bands:[
     {label:'可测层',theories:[['ZFC + 存在可测基数','κ-完备非主超滤'],['ZFC + ω₁ 上存在 precipitous ideal','Jech–Magidor–Mitchell–Prikry'],['ZFC + 连续统实值可测','Solovay 的随机实数模型']],reason:'三种理论等一致。可测基数还直接推出 V ≠ L；后者是命题判定。',sources:[references.precipitous,references.realvalued],problems:['vl','precip','realvalued']},
+    {label:'Mitchell 序 ≥ 2 层',theories:[['ZFC + ∃可测 κ (o(κ) ≥ 2)','正规测度之间出现非平凡序']],reason:'Mitchell 序衡量同一可测基数上正规测度的迭代结构；此档用于显示刻度，不把它冒充为 GCH 或 SCH 失败的精确强度。',sources:[references.mitchellcore,references.mitchellcover],problems:['mitchellorder'],link:'solid'},
+    {label:'Mitchell 序 κ⁺⁺ 层',theories:[['ZFC + ∃可测 κ (o(κ) = κ⁺⁺)','测度序列达到关键阈值'],['ZFC + ∃可测 κ (2^κ > κ⁺)','可测基数处 GCH 失败'],['ZFC + ¬SCH','某奇异强极限 μ 满足 2^μ > μ⁺']],reason:'三种理论等一致。Gitik 给出 SCH 失败的上下界；可测基数处 GCH 失败的配对见 Mitchell 的覆盖引理综述。这里是相对一致性，不是各命题直接互推。',sources:[references.mitchellcover,references.gitik1989,references.gitik1991],problems:['gchmeas','schfail'],link:'solid'},
     {label:'强基数模式层',theories:[['ZFC + 对每个有限 n 存在 n 个强基数','公理模式'],['ZFC + 投射绝对性','集合力迫下的精确版本']],reason:'投射绝对性的量词与力迫范围须按原定理理解。',sources:[references.hauser],problems:['projabs'],link:'dashed'},
     {label:'单个 Woodin 层',theories:[['ZFC + 存在 Woodin 基数','一枚 Woodin'],['ZFC + Δ¹₂ 决定性','细体／无实参数版本']],reason:'Woodin 的精确等一致性结果；不可把 Δ¹₂ 换成整个 PD。',sources:[references.larson],problems:['delta2'],link:'dashed'},
-    {label:'PD 有限模式层',theories:[['ZFC + PD','所有投射博弈可决定'],['ZFC + {「存在 n 个 Woodin」: n∈ω}','每个有限 n 一条公理']],reason:'此处是公理模式：每个有限 n 各有一条证明要求；它不等于单条“存在无穷多个 Woodin”。',sources:[references.martinsteel,references.larson],problems:['pd'],link:'solid'},
+    {label:'PD 有限模式层',theories:[['ZFC + PD','所有投射博弈可决定'],['ZFC + {「存在 n 个 Woodin」: n∈ω}','每个有限 n 一条公理']],reason:'此处是公理模式：每个有限 n 各有一条证明要求；它不等于单条“存在无穷多个 Woodin”。PD 还推出投射实数集的正则性。',sources:[references.martinsteel,references.larson],problems:['pd','pdregular'],link:'solid'},
     {label:'AD / 真正无穷 Woodin 层',theories:[['ZFC + 存在无穷多个 Woodin 基数','同一模型中有 ω 序列'],['ZF + AD','所有整数博弈可决定'],['ZFC + L(ℝ) ⊨ AD','内模型决定性']],reason:'Woodin 的等一致性。ZF+AD 与完整 AC 冲突；三个理论并列仅指相对一致性强度相同。',sources:[references.larson,references.welch],problems:['ad'],link:'solid'},
     {label:'AD⁺ + θ₀ < Θ 层',theories:[['ZFC + λ 为 Woodin 极限，且某 κ<λ 是 <λ-强','精确大基数假设'],['ZF + AD⁺ + θ₀ < Θ','Solovay 序列开始分层']],reason:'Woodin 的等一致性，见 Steel 定理 15.1。',sources:[references.steel],problems:['adplus'],link:'solid'},
     {label:'ADᵣ 层',theories:[['ZFC + λ 同时是 Woodin 与 <λ-强基数的极限','导出模型假设'],['ZF + ADᵣ','实数选择的博弈可决定'],['ZF + AD + 每个实数集都是 Suslin','等价表述']],reason:'Woodin–Steel 的等一致性；末两项在 AD 背景下还可证明等价。',sources:[references.steeldm,references.larson],problems:['adr'],link:'solid'},
     {label:'ADᵣ + Θ 正则层',theories:[['ZF + ADᵣ + Θ 为正则基数','实数博弈决定性'],['ZFC + CH + ω₁ 上存在 ω₁-稠密理想','定理 1.5'],['ZFC + CH + NSω₁ 在稠密多个条件下为 ω₁-稠密','推论 1.6'],['ZFC + NS 在 Pω₁(ℝ) 上强且伪齐性','定理 1.10']],reason:'四项在相对一致性强度上相同；CH 只出现在相应的两个 ZFC 理想理论中，不能从其他框里省略或移入。',sources:[references.adthetareg],problems:['adthetareg'],link:'solid'},
     {label:'最大 Suslin 公理 LSA 层',theories:[['ZF + LSA','AD⁺ + 最大 Suslin 基数为 OD-不可达']],reason:'LSA 的一致性强度高于 ADᵣ+Θ 正则，但 LSA 本身蕴含 ¬ADᵣ；实线仅比较一致性强度。PFA 与 Woodin 极限层提供相容性上界，目前不把它们并列为等一致。',sources:[references.lsabook],problems:['lsa'],link:'solid'},
     {label:'LSA⁺ 层',theories:[['ZF + LSA⁺','AD⁺ + ∃A⊆ℝ ∀α<Θ ∀s:ω→α (A∉OD(s))']],reason:'Steel 定义 6.1 与命题 6.2：LSA⁺ 直接蕴含 LSA。它们是否有严格不同的一致性强度，原文明确列为尚未证明；这里单列理论，不与 LSA 同框标成等一致。定理 6.3 给出 least branch hod pair 假设下的相容性上界。',sources:[references.steelmouse,references.steelmousepdf],problems:['lsaplus'],link:'implication'},
-    {label:'超紧致层',theories:[['ZFC + 存在超紧致基数','强闭包初等嵌入']],reason:'Baumgartner 从这里构造 PFA 模型。目前不把 PFA 与超紧致写作等一致。',problems:['pfa'],link:'dashed'}
-  ],note:'LSA ⟹ ¬ADᵣ；LSA⁺ ⟹ LSA，但严格一致性强度差异未证。“Woodin 极限的 Woodin 基数 ⟹ Con(LSA)”是已知上界，不是等一致结论。'},
+    {label:'超紧致层',theories:[['ZFC + 存在超紧致基数','强闭包初等嵌入']],reason:'Woodin 与 Shelah–Woodin 证明超紧致基数对 L(ℝ) 中实数集的决定性、可测性和 Baire 性质有强烈推论；Baumgartner 从此出发构造 PFA 模型。这些均不是超紧致的精确等一致配对。',sources:[references.woodin1988,references.shelahwoodin,references.steelpfa],problems:['pfa','lrtrees','lrregular'],link:'dashed'}
+  ],note:'¬SCH 比 0♯ 的单向必要条件强，精确落在 Mitchell 序 κ⁺⁺ 层。LSA ⟹ ¬ADᵣ；LSA⁺ ⟹ LSA，但严格一致性强度差异未证。超紧致的实数集结论限于 L(ℝ)。'},
   {name:'超一线',code:'TIER 06',summary:'以模型论刻画补足可扩与巨大层；同框只放已核对的等价或等一致理论。',route:'可扩 → Vopěnka → 巨大',bands:[
     {label:'可扩层',theories:[['ZFC + 存在可扩基数','extendible'],['ZFC + 二阶逻辑 L² 的 ULST 数存在','该数恰是最小可扩基数']],reason:'Boney–Osinski 定理 6.2 给出同一模型内的精确刻画：最小可扩基数 = ULST(L²)。',sources:[references.bonneyosinski]},
     {label:'C⁽ⁿ⁾-可扩系列（固定 n≥1）',theories:[['ZFC + 存在 C⁽ⁿ⁾-可扩基数','逐一固定 n'],['ZFC + sort logic Lˢ⁽ⁿ⁾ 的 ULST 数存在','最小 C⁽ⁿ⁾-可扩基数']],reason:'定理 6.3 对每个固定 n 给出精确对应；不同 n 之间不可视为同一强度。',sources:[references.bonneyosinski],link:'solid'},
