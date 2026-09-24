@@ -29,3 +29,5 @@ LSA 之后单列 LSA⁺。Steel《Mouse Pairs and Suslin Cardinals》[定义 6.1
 超紧致层增加实数集结论：[Woodin 1988](https://doi.org/10.1073/pnas.85.18.6587)证明 L(ℝ) 的实数集由弱齐性树投影描述，并得到 L(ℝ)⊨AD；[Shelah–Woodin 1990](https://doi.org/10.1007/BF02801471)给出 L(ℝ) 中实数集的 Lebesgue 可测性、Baire 性质及不存在实数良序的结论。[Steel 2005](https://doi.org/10.2178/jsl/1129642125)还证明 PFA ⇒ L(ℝ)⊨AD。这些是直接推论或相容性构造，未把它们误列为超紧致的精确等一致理论。
 
 弱紧致与 ω-Erdős 之间另列不可言喻基数和 remarkable 基数。[Schindler](https://doi.org/10.48550/arXiv.math/9909043)把 remarkable 的一致性强度放在两者之间，并证明其存在与 proper forcing 下的 L(ℝ) 绝对性等一致；这与 Wilson 所用的「非 Σ₂-反射弱 remarkable」是不同断言。
+
+0♯ 层加入「存在非平凡初等嵌入 j:L→L」作为与 0♯ 等价的理论，并把 V≠L 列为其直接判定的命题。两个方向见 [Jech《Set Theory》第 18 章](https://euclid.colorado.edu/~monkd/jech.pdf)的引理 18.31 与定理 18.45。单独的 V≠L 不具有这一强度。
