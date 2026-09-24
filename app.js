@@ -167,7 +167,7 @@ const tiers = [
     {label:'完整二阶算术 Z₂',theories:[['Z₂','对全部二阶算术公式概括']],reason:'采用形式理论的 Henkin 语义；它强于此前列出的有限概括片段。',sources:[references.simpson],problems:['fullz2'],link:'solid'},
     {label:'三阶算术 Z₃',theories:[['Z₃','再加入自然数集的集合']],reason:'Z₃ 可证明 Con(Z₂)，因此严格提高一致性强度。',sources:[references.schindlercheng],problems:['finiteorders'],link:'solid'},
     {label:'有限高阶算术 Zₙ（每个固定 n≥4）',theories:[['Zₙ（n≥4）','每个有限 n 都是单独的一致性强度档']],reason:'对每个 n，Zₙ₊₁ 可证明 Con(Zₙ)；这里用一个系列卡片缩写无限多档，不表示所有 n 等一致。',sources:[references.schindlercheng],problems:['finiteorders'],series:true,link:'solid'},
-    {label:'ω 阶算术 Zω',theories:[['Zω = ⋃ₙ≥₂ Zₙ','所有有限类型；没有新设无穷类型']],reason:'按照用户指定的定义，汇集每个有限阶的公理。ZFC 可构造它的标准有限类型模型；不能把本档与 ZFC 基准同框。',sources:[references.schindlercheng,references.kohlenbach],problems:['omegaorders'],link:'solid'}
+    {label:'ω 阶算术 Zω',theories:[['Zω = ⋃ₙ≥₂ Zₙ','所有有限类型；没有新设无穷类型']],reason:'Zω 汇集所有有限阶算术 Zₙ 的公理；每条公式仍只涉及有限类型。ZFC 能构造 Zω 的标准模型并证明其一致性，因此两者处于不同的一致性强度层。',sources:[references.schindlercheng,references.kohlenbach],problems:['omegaorders'],link:'solid'}
   ],note:'“算术阶数”指允许哪些有限类型的对象，不等于公式的算术层级。Q、EFA 附近的虚线只排理论扩张，不声称已核对严格一致性差距；WKL₀ 与 RCA₀ 虽证明力不同，仍等一致。'},
   {name:'ZFC 与模型存在',code:'TIER 01',summary:'从 ZFC 基准到一般模型、传递模型；三者须分档，随后进入 worldly。',route:'ZFC → Con(ZFC) → 传递 ZFC 模型',relations:[['已证强度','ZFC <Con ZFC+Con(ZFC) <Con 存在传递 ZFC 模型 <Con 存在 worldly 基数',references.hamkinsother],['已判定','CH 与 ¬CH、Souslin 假设的两侧答案均可与 ZFC 相容'],['区分背景','ZF+DC+所有实数集有 Baire 性质与 ZFC 等一致，不表示它蕴含 AC',references.shelah]],bands:[
     {label:'基准层',theories:[
