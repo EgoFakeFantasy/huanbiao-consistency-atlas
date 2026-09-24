@@ -2,7 +2,7 @@ const papers = {
   con: {
     title: 'Con(ZFC)：ZFC 的一致性', kind: '独立于 ZFC（若 ZFC 一致）',
     people: 'Kurt Gödel · 1931',
-    story: '第二不完备性定理表明，足以表达算术且一致的 ZFC 不能证明自身的一致性。于是“存在 ZFC 模型”构成强三线的一种自然例子；此处说的是一般的一阶模型，不额外要求传递性。',
+    story: '第二不完备性定理表明，若 ZFC 一致，它不能证明自身的一致性。完备性定理把 Con(ZFC) 与“一般一阶 ZFC 模型存在”对应起来；传递模型和 worldly cardinal 都是后续更强的层次。',
     sources: [['Gödel 1931 · DOI', 'https://doi.org/10.1007/BF01700692']]
   },
   ac: {
@@ -96,7 +96,12 @@ const references = {
   gitik1991: ['Gitik 1991 · DOI', 'https://doi.org/10.1016/0168-0072(91)90016-F'],
   woodin1988: ['Woodin 1988 · DOI', 'https://doi.org/10.1073/pnas.85.18.6587'],
   shelahwoodin: ['Shelah–Woodin 1990 · DOI', 'https://doi.org/10.1007/BF02801471'],
-  steelpfa: ['Steel 2005 · DOI', 'https://doi.org/10.2178/jsl/1129642125']
+  steelpfa: ['Steel 2005 · DOI', 'https://doi.org/10.2178/jsl/1129642125'],
+  hamkinsworldly: ['Hamkins 2017 · worldly 与不可达', 'https://jdh.hamkins.org/worldly-cardinals-are-not-always-downwards-absolute/'],
+  hamkinsother: ['Hamkins 2020 · otherworldly 强度链', 'https://jdh.hamkins.org/otherwordly-cardinals/'],
+  hamkinskm: ['Hamkins 2014 · Kelley–Morse', 'https://jdh.hamkins.org/km-implies-conzfc/'],
+  gitmankm: ['Gitman · KM 强度讲义', 'https://victoriagitman.github.io/files/kelleymorsechoice-workshop.pdf'],
+  goldbergweak: ['Goldberg · 弱／强不可达等一致', 'https://math.berkeley.edu/~goldberg/Papers/StrongCompactnessAndUA.pdf']
 };
 
 Object.assign(papers, {
@@ -120,6 +125,14 @@ Object.assign(papers, {
   pdregular: {title:'投射实数集的正则性',kind:'PD 的直接推论；非等一致配对',people:'Donald A. Martin、John R. Steel · 1989',story:'PD 判定所有投射博弈，从而所有投射实数集都 Lebesgue 可测、具有 Baire 性质及完美集性质。这里是从决定性导出的正则性结论；它们单独作为理论时不能直接并列为 PD 的精确强度。',sources:[references.martinsteel]},
   lrtrees: {title:'L(ℝ) 中实数集的决定性',kind:'超紧致基数的直接推论；非精确等一致',people:'W. Hugh Woodin · 1988',story:'Woodin 证明：若存在超紧致基数，则 L(ℝ) 的每个实数集是弱齐性树的投影，由此 L(ℝ) 满足 AD。这个内模型结论不能读成 V 的每个实数集都可决定；L(ℝ)⊨AD 已在无穷 Woodin 层列作较低强度的等一致理论。',sources:[references.woodin1988]},
   lrregular: {title:'L(ℝ) 中实数集的正则性',kind:'超紧致基数的直接推论；限定在内模型 L(ℝ)',people:'Saharon Shelah、W. Hugh Woodin · 1990',story:'Shelah–Woodin 证明，超紧致基数使 L(ℝ) 的每个实数集都 Lebesgue 可测并具有 Baire 性质，且 L(ℝ) 中不存在实数的良序。由 L(ℝ) 中的决定性还得到完美集性质。完整 ZFC 中当然仍有不可测的实数集，因此 L(ℝ) 的范围不能省略。',sources:[references.shelahwoodin,references.woodin1988]},
+  transitive: {title:'存在传递的 ZFC 模型',kind:'严格强于 Con(ZFC)，严格弱于存在 worldly cardinal',people:'Gödel 不完备性定理；Joel David Hamkins · 2020 年强度整理',story:'传递模型的成员关系是真实的 ∈，并自动良基；一般一阶模型不必如此。若 M 是传递 ZFC 模型，则 M 内还有较小的一阶 ZFC 模型，所以传递模型假设能证明 Con(ZFC)。Hamkins 给出它与 worldly cardinal 之间的严格相对一致性次序。',sources:[references.hamkinsother]},
+  worldly: {title:'世界基数（worldly cardinal）',kind:'强三线的新标准：∃κ Vκ ⊨ ZFC',people:'Ernst Zermelo（累积层宇宙）；Joel David Hamkins · 2017 年分析',story:'κ 是 worldly，当且仅当累积层 Vκ 满足 ZFC。不可达基数必为 worldly；反向不成立，最小 worldly 基数实际上具有可数共尾度。worldly 的强度严格高于仅存在传递 ZFC 模型，并严格低于不可达基数。',sources:[references.hamkinsworldly,references.hamkinsother]},
+  manyworldly: {title:'真类多个世界基数',kind:'严格高于存在一枚 worldly，低于 otherworldly',people:'Joel David Hamkins · 2020',story:'陈述为“对每个序数 α，都存在 α 以上的 worldly 基数 κ”。它与仅有一枚 worldly 的假设不能合并；Hamkins 的强度链把它严格放在单枚 worldly 与 otherworldly 之间。',sources:[references.hamkinsother]},
+  otherworldly: {title:'otherworldly 基数',kind:'严格高于真类多个 worldly',people:'Jason Chen、Joel David Hamkins · 2020',story:'存在 κ<λ 满足 Vκ ≺ Vλ，即较低的秩初段在一阶语言中完全初等地嵌入较高秩初段。Hamkins 证明 κ 必为 worldly，且其下有无界多个 worldly 基数。这给出真类多个 worldly 之上的严格强度层。',sources:[references.hamkinsother]},
+  totallyother: {title:'totally otherworldly 基数',kind:'严格高于真类多个 otherworldly',people:'Joel David Hamkins · 2020',story:'κ 对任意高度 θ 都能找到 λ>θ，使 Vκ ≺ Vλ。Hamkins 证明它是 Σ₂ 正确的 worldly 基数，并是 otherworldly 基数的极限；存在一枚与存在真类多个都位于不可达基数假设之下。',sources:[references.hamkinsother]},
+  km: {title:'Kelley–Morse 类集合论 KM',kind:'严格弱于存在不可达基数；与相邻 otherworldly 档不画精确箭头',people:'John L. Kelley、Anthony Morse；Joel David Hamkins · 2014；Victoria Gitman · 2017',story:'KM 允许类量词参与类概括，可构造一阶真谓词及传递 ZFC 模型的初等塔。若 κ 不可达，则以 Vκ 为集合、其所有子集为类可构造 KM 模型。KM 严格弱于一枚不可达基数；此图不把它与紧邻的 otherworldly 档标成已核对的精确强度关系。',sources:[references.hamkinskm,references.gitmankm]},
+  weakinaccessible: {title:'弱不可达与强不可达',kind:'两种存在断言等一致；基数性质本身不同',people:'Kurt Gödel（可构造宇宙 L）；Gabriel Goldberg（综述）',story:'弱不可达指不可数正则极限基数，不要求强极限；强不可达再要求 2^λ<κ 对每个 λ<κ 成立。若 V 中有弱不可达 κ，则在内模型 L 中 κ 为强不可达，故两种存在断言等一致。这不表示同一个 κ 在 V 中必为强不可达。',sources:[references.goldbergweak]},
+  grothendieck: {title:'Grothendieck 宇宙',kind:'存在断言与存在强不可达基数对应',people:'Alexander Grothendieck（范畴论宇宙）；Joel David Hamkins · 2017 年说明',story:'一个非平凡的 Grothendieck 宇宙对常用集合构造封闭，可写为 Vκ，其中 κ 为强不可达基数。因而“存在这样的宇宙”在 ZFC 中与“存在强不可达基数”对应。worldly 的 Vκ 虽满足 ZFC，但当 κ 奇异时不具备同样的外部封闭性。',sources:[references.hamkinsworldly]},
   laverq: {title:'Laver table 的 q(n) 对每个 n 都有定义',kind:'I3 下可证明；ZFC 中的可证性仍未解决',people:'Richard Laver · 1992 年预印本，1995 年发表',story:'设 p(m) 是 2^m 阶 Laver table 首行的周期，q(n)=min{m:p(m)≥2^n}。I3 给出的秩内嵌入使这些周期无界，因此 q 为全函数。这是 I3 的单向推论；不能据此声称 q 的全函数性与 I3 等一致，也不能声称已证明它独立于 ZFC。',sources:[references.laver,references.biane]},
   i1forcing: {title:'I1 与 λ⁺、λ⁺⁺ 的树性质可相容',kind:'I1 给出相容性上界；不是等一致式',people:'Vincenzo Dimonte、Liuzhen Wu · 2015',story:'作者发展保持 I1(λ) 的力迫工具，分别研究它与多种 λ 附近组合性质的相容性，例子包括 λ⁺ 或 λ⁺⁺ 上的树性质、GCH 首次失败等。论文没有将这些性质单独判为与 I1 等一致。',sources:[references.dimontewu]},
   exacting: {title:'exacting 基数的位置',kind:'一致性强度严格介于 I3 与 I2 之间',people:'Juan Pablo Aguilera、Joan Bagaria、Gabriel Goldberg、Philipp Lücke · 2025',story:'论文的推论 5.11 给出严格分层：Con(ZFC+I2) 强于 Con(ZFC+存在 exacting 基数)，后者又强于 Con(ZFC+I3)。因此把它单设一档，不与两端并列。',sources:[references.beyondhod]},
@@ -129,16 +142,24 @@ Object.assign(papers, {
 });
 
 const tiers = [
-  {name:'三线',code:'TIER 01',summary:'基准一致性层：不同的经典理论与独立性命题，可以具有相同的相对一致性强度。',route:'ZFC 基准',bands:[
+  {name:'三线',code:'TIER 01',summary:'从 ZFC 基准到一般模型、传递模型；三者须分档，随后才进入以 worldly 为标准的强三线。',route:'ZFC → Con(ZFC) → 传递 ZFC 模型',bands:[
     {label:'基准层',theories:[
       ['ZF','不含选择公理'],['ZFC','ZF + AC'],['ZFC + CH','连续统假设成立'],['ZFC + ¬CH','连续统假设失败'],['ZFC + Souslin 假设','无 Souslin 直线'],['ZFC + ¬Souslin 假设','存在 Souslin 直线'],['ZF + DC + 所有实数集有 Baire 性质','Shelah 模型']
-    ],reason:'这些理论的相容性可由 ZFC 的相容性获得；这里的并列只表示等一致，不表示理论互相蕴含。',sources:[references.shelah],problems:['ac','ch','suslin','whitehead','baire']}
-  ],note:'CH、Souslin 假设和 Whitehead 问题两侧的答案都可以出现在基准层。'},
-  {name:'强三线',code:'TIER 02',summary:'把“存在 ZFC 的模型”作为真正高于 ZFC 基准层的一致性阶。',route:'自我一致性',bands:[
-    {label:'Con(ZFC) 层',theories:[['ZFC + Con(ZFC)','ZFC 自身一致'],['ZFC +「存在一个一阶 ZFC 模型」','由完备性定理对应'],['ZF + Con(ZF)','与 ZFC 形式化等一致']],reason:'这里的模型指一般一阶模型。若改成传递模型，强度会上升。',problems:['con']}
-  ],note:'第二不完备性定理解释了此层与三线的严格差异。'},
+    ],reason:'这些理论的相容性可由 ZFC 的相容性获得；这里的并列只表示等一致，不表示理论互相蕴含。',sources:[references.shelah],problems:['ac','ch','suslin','whitehead','baire']},
+    {label:'Con(ZFC) 层',theories:[['ZFC + Con(ZFC)','ZFC 自身一致'],['ZFC +「存在一个一阶 ZFC 模型」','由完备性定理对应'],['ZF + Con(ZF)','与 ZFC 形式化等一致']],reason:'模型指一般一阶模型；第二不完备性定理把此层严格分离于基准层。',problems:['con'],link:'solid'},
+    {label:'传递 ZFC 模型层',theories:[['ZFC +「存在传递的 ZFC 模型」','真实 ∈ 的良基模型']],reason:'传递模型比单纯 Con(ZFC) 更强，但其存在仍弱于强三线的新 worldly 标准。',sources:[references.hamkinsother],problems:['transitive'],link:'solid'}
+  ],note:'CH、Souslin 假设和 Whitehead 问题两侧答案位于基准框；Con(ZFC) 与传递模型各自占更高的前置档。'},
+  {name:'强三线',code:'TIER 02',summary:'以存在一枚世界基数为标准，继续展示从 worldly 到不可达基数之前的严格强度链。',route:'worldly → otherworldly → totally otherworldly → 不可达',bands:[
+    {label:'世界基数 · 强三线标准',theories:[['ZFC + 存在 worldly 基数 κ','Vκ ⊨ ZFC']],reason:'每个不可达基数都是 worldly，但最小 worldly 基数可为奇异，且其共尾度为 ω。此层严格高于仅存在传递 ZFC 模型。',sources:[references.hamkinsworldly,references.hamkinsother],problems:['worldly']},
+    {label:'真类多个世界基数',theories:[['ZFC + 存在真类多个 worldly 基数','∀α ∃κ>α (Vκ ⊨ ZFC)']],reason:'要求 worldly 基数在序数中无界，严格强于仅有一枚。',sources:[references.hamkinsother],problems:['manyworldly'],link:'solid'},
+    {label:'otherworldly 层',theories:[['ZFC + 存在 otherworldly 基数 κ','∃λ>κ (Vκ ≺ Vλ)']],reason:'较低秩初段在较高秩初段中一阶初等；严格高于真类多个 worldly。',sources:[references.hamkinsother],problems:['otherworldly'],link:'solid'},
+    {label:'真类多个 otherworldly',theories:[['ZFC + 存在真类多个 otherworldly 基数','每个序数之上都有一个']],reason:'对每个高度都有秩初段的初等扩张起点；严格高于只存在一个 otherworldly。',sources:[references.hamkinsother],problems:['otherworldly'],link:'solid'},
+    {label:'totally otherworldly 层',theories:[['ZFC + 存在 totally otherworldly 基数 κ','任意 θ 都有 λ>θ 且 Vκ ≺ Vλ']],reason:'同一 κ 可初等地嵌入任意高的秩初段；严格高于真类多个 otherworldly。',sources:[references.hamkinsother],problems:['totallyother'],link:'solid'},
+    {label:'真类多个 totally otherworldly',theories:[['ZFC + 存在真类多个 totally otherworldly 基数','每个高度之上都有一个']],reason:'严格高于单枚 totally otherworldly，仍严格低于不可达基数存在。',sources:[references.hamkinsother],problems:['totallyother'],link:'solid'},
+    {label:'Kelley–Morse 类理论 · 区间旁支',theories:[['KM（含全类概括的类集合论）','真谓词与秩初段初等塔']],reason:'KM 严格弱于存在不可达基数，并强于大量迭代 Con(ZFC) 层。这里把它作为同一区间的旁支；虚线不宣称它与上一档有已核对的精确比较。',sources:[references.hamkinskm,references.gitmankm],problems:['km'],link:'dashed'}
+  ],note:'Hamkins 给出的 worldly → otherworldly → totally otherworldly 各档在一致性强度上严格递增。KM 另作区间旁支；下一个 tier 的不可达基数是以上各档的已知上界。'},
   {name:'二线',code:'TIER 03',summary:'不可达基数对应实数集正则性；Mahlo 则另列为更强的基数公理。',route:'不可达 → Mahlo',bands:[
-    {label:'不可达层',theories:[['ZFC + 存在不可达基数','正则强极限 κ'],['ZF + DC + 每个实数集都 Lebesgue 可测','Solovay–Shelah 等一致性'],['ZFC + 每个投射实数集都 Lebesgue 可测','投射集版本']],reason:'两条可测性理论都与不可达基数等一致，但各自使用不同的基础公理或量化范围。',sources:[references.solovay,references.shelah,references.goldstern],problems:['lm','projlm']},
+    {label:'不可达层',theories:[['ZFC + 存在强不可达基数','不可数正则强极限 κ'],['ZFC + 存在弱不可达基数','在 L 中取得强不可达下界'],['ZFC + 存在 Grothendieck 宇宙','范畴论的集合宇宙'],['ZF + DC + 每个实数集都 Lebesgue 可测','Solovay–Shelah 等一致性'],['ZFC + 每个投射实数集都 Lebesgue 可测','投射集版本']],reason:'这五种理论在一致性强度上相同。弱／强不可达的基数性质不同；两条可测性理论使用不同基础公理或量化范围。',sources:[references.goldbergweak,references.hamkinsworldly,references.solovay,references.shelah,references.goldstern],problems:['weakinaccessible','grothendieck','lm','projlm']},
     {label:'Mahlo 层',theories:[['ZFC + 存在 Mahlo 基数','其下不可达基数构成驻集']],reason:'原 tier 中的下一枚大基数；目前不附会未经核对的“经典问题”等一致式。',link:'solid'}
   ],note:'同一 tier 内仍有严格的强度差异，因此每个档位单独成组。'},
   {name:'强二线',code:'TIER 04',summary:'把树性质、不可分辨元和划分性质各自配到准确的强度层。',route:'弱紧致、0# 与 Ramsey',bands:[
@@ -194,7 +215,7 @@ const tiers = [
 const tierList = document.querySelector('#tier-list');
 const detail = document.querySelector('#detail');
 const popover = document.querySelector('#popover');
-let selected = 2;
+let selected = 1;
 let activeBadge = null;
 let popoverShownAt = 0;
 
