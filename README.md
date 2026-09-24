@@ -15,3 +15,7 @@
 一线层另增 ZF+ADᵣ+「Θ 正则」的四项等一致组，包含 CH+ω₁ 上 ω₁-稠密理想及两种非平稳理想表述，依据 [Adolf 等人的论文](https://doi.org/10.48550/arXiv.2111.06220)。其上单列 LSA，依据 [Sargsyan–Trang 专著](https://doi.org/10.1017/9781009520683)说明定义、与 ADᵣ+Θ 正则的相对一致性比较及已知上界。LSA 蕴含 ¬ADᵣ，因此该箭头不表示直接蕴含；Woodin 极限及 PFA 只作为相容性上界。
 
 LSA 之后单列 LSA⁺。Steel《Mouse Pairs and Suslin Cardinals》[定义 6.1、命题 6.2](https://math.berkeley.edu/~steel/papers/mousepairs.suslina.pdf)给出 LSA⁺ 的公式及 LSA⁺ 蕴含 LSA；原文也明确指出尚未证明二者具有严格不同的一致性强度。因此连接线使用“直接蕴含、严格强度未证”的标记，不把它们放入等一致框。[发表版本 DOI](https://doi.org/10.1142/9789819806584_0013)。
+
+可测层之后增加 Mitchell 序刻度。可测基数处 GCH 失败、奇异强极限基数处 SCH 失败，与存在可测 κ 满足 o(κ)=κ⁺⁺ 三种理论等一致；依据 [Mitchell 的覆盖引理综述](https://people.clas.ufl.edu/wjm/files/covering.pdf)和 Gitik 的 [1989 年](https://doi.org/10.1016/0168-0072(89)90069-9)、[1991 年](https://doi.org/10.1016/0168-0072(91)90016-F)论文。Jensen 覆盖引理给出 ¬SCH ⇒ 0♯，这是单向必要条件，不把 0♯ 放入同一个等一致框。
+
+超紧致层增加实数集结论：[Woodin 1988](https://doi.org/10.1073/pnas.85.18.6587)证明 L(ℝ) 的实数集由弱齐性树投影描述，并得到 L(ℝ)⊨AD；[Shelah–Woodin 1990](https://doi.org/10.1007/BF02801471)给出 L(ℝ) 中实数集的 Lebesgue 可测性、Baire 性质及不存在实数良序的结论。[Steel 2005](https://doi.org/10.2178/jsl/1129642125)还证明 PFA ⇒ L(ℝ)⊨AD。这些是直接推论或相容性构造，未把它们误列为超紧致的精确等一致理论。
