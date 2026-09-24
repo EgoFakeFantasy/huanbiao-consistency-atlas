@@ -4,6 +4,8 @@
 
 内容以[幻标 2.0 原表](https://www.bilibili.com/opus/1023393752074420246)的 tier 名称与顺序为导航，再按相对一致性强度重新组织理论。原表的知乎[方向说明](https://zhuanlan.zhihu.com/p/2086038319830508988)列为参考链接。同一强度框直接并列等一致理论；实线表示已核对的强度上升，虚线只表示阅读顺序。
 
+强三线现在以存在一枚 worldly cardinal（世界基数，即 Vκ⊨ZFC）为标准。原先的 Con(ZFC) 层及传递 ZFC 模型层移为前置档；[Hamkins 的强度链](https://jdh.hamkins.org/otherwordly-cardinals/)给出 worldly、真类多个 worldly、otherworldly、真类多个 otherworldly、totally otherworldly、真类多个 totally otherworldly，最后到不可达基数的严格一致性强度上升。worldly 不要求正则；[最小 worldly 基数的共尾度为 ω](https://jdh.hamkins.org/worldly-cardinals-are-not-always-downwards-absolute/)。[Kelley–Morse 类理论](https://jdh.hamkins.org/km-implies-conzfc/)另列为该区间的旁支，与相邻 otherworldly 档仅以阅读虚线连接；不宣称精确比较。
+
 典型对应组包括 ZF+AD ≡Con ZFC+存在无穷多个 Woodin 基数、ZFC+PD ≡Con 每个有限 n 各有 n 个 Woodin 基数的公理模式、ZF+ADᵣ ≡Con 同时为 Woodin 与 <λ-强基数之极限的 λ、ZF+DC+所有实数集可测 ≡Con ZFC+不可达基数。此处的 ≡Con 表示相对一致性同强度，不表示两个理论互相蕴含。PFA 只标出来自超紧致基数的相容性构造。
 
 命题弹窗附证明者、年份、工作介绍及原始论文 DOI 或原文链接。较高决定性层的精确表述参考 [Larson](https://paulblarson.github.io/Cabal_Determinacy.pdf) 与 [Steel](https://math.berkeley.edu/~steel/papers/tutorial3.pdf)。
