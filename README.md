@@ -8,6 +8,8 @@ ZFC 之前新增算术段，从 Robinson 算术 Q，经 EFA、PRA/RCA₀/WKL₀�
 
 “算术层：Q—Zω”是导航中的 **TIER 00**。桌面端的层次导航会保持在视野内；手机端右下角的“选择层次”可随时返回导航。页面资源使用版本参数，避免旧脚本缓存掩盖新增层次。每个 tier 上方都有关系区，分别标注已证的等一致或单向推论、命题判定，以及有文献依据的开放问题；“本图未核实”不等同于数学公开问题。[Friedman–Holy](https://www.logic.univie.ac.at/~dsyfriedman/papers/joint.peter.acc.pdf)讨论 PFA 与超紧致基数之间仍未闭合的一致性强度差距。
 
+弱紧致—Ramsey 层新增 ω-Erdős、ω₁-Erdős 及 Jónsson／Rowbottom／Ramsey 基数。ω-Erdős 与非 Σ₂-反射的弱 remarkable 基数等一致，见 [Wilson](https://doi.org/10.1017/jsl.2018.76)；其可迭代基数下界见 [Gitman–Welch](https://victoriagitman.github.io/files/ramseylikecardinalsii.pdf)。ω₁-Erdős 蕴含 0♯，不能与 ω-Erdős 合并。存在 Jónsson、Rowbottom、Ramsey 基数三种断言等一致，依据 [Kleinberg](https://doi.org/10.2307/2273038)和 [Mitchell](https://doi.org/10.2307/2273732)；同一个基数上的性质只有 Ramsey ⇒ Rowbottom ⇒ Jónsson。[Rinot 2026](https://doi.org/10.1007/s40574-025-00525-z)记录奇异后继 Jónsson 问题及驻集反射；[Apter–Koepke](https://doi.org/10.1007/s00153-006-0005-3)将 ZF+¬AC+DCℵₙ+「ℵω 为 Rowbottom 且带滤子」与可测基数配对，不能据此回答 ZFC 中 ℵω 是否 Rowbottom。
+
 “世界基数”tier 以存在一枚 worldly cardinal（即 Vκ⊨ZFC）为起点。Con(ZFC) 层及传递 ZFC 模型层是前置档；[Hamkins 的强度链](https://jdh.hamkins.org/otherwordly-cardinals/)给出 worldly、真类多个 worldly、otherworldly、真类多个 otherworldly、totally otherworldly、真类多个 totally otherworldly，最后到不可达基数的严格一致性强度上升。worldly 不要求正则；[最小 worldly 基数的共尾度为 ω](https://jdh.hamkins.org/worldly-cardinals-are-not-always-downwards-absolute/)。[Kelley–Morse 类理论](https://jdh.hamkins.org/km-implies-conzfc/)另列为该区间的旁支，与相邻 otherworldly 档仅以阅读虚线连接；不宣称精确比较。
 
 典型对应组包括 ZF+AD ≡Con ZFC+存在无穷多个 Woodin 基数、ZFC+PD ≡Con 每个有限 n 各有 n 个 Woodin 基数的公理模式、ZF+ADᵣ ≡Con 同时为 Woodin 与 <λ-强基数之极限的 λ、ZF+DC+所有实数集可测 ≡Con ZFC+不可达基数。此处的 ≡Con 表示相对一致性同强度，不表示两个理论互相蕴含。PFA 只标出来自超紧致基数的相容性构造。
@@ -25,3 +27,5 @@ LSA 之后单列 LSA⁺。Steel《Mouse Pairs and Suslin Cardinals》[定义 6.1
 可测层之后增加 Mitchell 序刻度。可测基数处 GCH 失败、奇异强极限基数处 SCH 失败，与存在可测 κ 满足 o(κ)=κ⁺⁺ 三种理论等一致；依据 [Mitchell 的覆盖引理综述](https://people.clas.ufl.edu/wjm/files/covering.pdf)和 Gitik 的 [1989 年](https://doi.org/10.1016/0168-0072(89)90069-9)、[1991 年](https://doi.org/10.1016/0168-0072(91)90016-F)论文。Jensen 覆盖引理给出 ¬SCH ⇒ 0♯，这是单向必要条件，不把 0♯ 放入同一个等一致框。
 
 超紧致层增加实数集结论：[Woodin 1988](https://doi.org/10.1073/pnas.85.18.6587)证明 L(ℝ) 的实数集由弱齐性树投影描述，并得到 L(ℝ)⊨AD；[Shelah–Woodin 1990](https://doi.org/10.1007/BF02801471)给出 L(ℝ) 中实数集的 Lebesgue 可测性、Baire 性质及不存在实数良序的结论。[Steel 2005](https://doi.org/10.2178/jsl/1129642125)还证明 PFA ⇒ L(ℝ)⊨AD。这些是直接推论或相容性构造，未把它们误列为超紧致的精确等一致理论。
+
+弱紧致与 ω-Erdős 之间另列不可言喻基数和 remarkable 基数。[Schindler](https://doi.org/10.48550/arXiv.math/9909043)把 remarkable 的一致性强度放在两者之间，并证明其存在与 proper forcing 下的 L(ℝ) 绝对性等一致；这与 Wilson 所用的「非 Σ₂-反射弱 remarkable」是不同断言。
