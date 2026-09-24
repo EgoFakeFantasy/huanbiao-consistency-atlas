@@ -4,7 +4,7 @@
 
 内容以[幻标 2.0 原表](https://www.bilibili.com/opus/1023393752074420246)为参考，按每个 tier 的代表性公理重新命名并依相对一致性强度组织理论。原表的知乎[方向说明](https://zhuanlan.zhihu.com/p/2086038319830508988)列为参考链接。同一强度框直接并列等一致理论；实线表示已核对的强度上升，虚线只表示阅读顺序。
 
-ZFC 之前新增算术段，从 Robinson 算术 Q，经 EFA、PRA/RCA₀/WKL₀、PA/ACA₀、ATR₀、Π¹₁-CA₀、完整二阶算术 Z₂，到每个有限 n 的 Zₙ，终点为 Zω。这里的 **ω 阶算术**依用户指定，指所有有限类型的理论并集，不引入新的无穷类型。PRA、IΣ₁、RCA₀、WKL₀ 等一致，PA 与 ACA₀ 等一致；即使 WKL₀ 比 RCA₀ 能证明更多二阶命题，也不能画成严格一致性强度箭头。参考 [Simpson《二阶算术子系统》](https://doi.org/10.1017/CBO9780511581007)与 [Schindler–Cheng 的高阶算术研究](https://www.uni-muenster.de/FB10/u/rds/cheng_yong_rds.pdf)。Q 与 EFA 附近仅按理论扩张排布，虚线不声称严格一致性差距。
+ZFC 之前新增算术段，从 Robinson 算术 Q，经 EFA、PRA/RCA₀/WKL₀、PA/ACA₀、ATR₀、Π¹₁-CA₀、完整二阶算术 Z₂，到每个有限 n 的 Zₙ，终点为 Zω。这里的 **ω 阶算术**指所有有限类型的理论并集，不引入新的无穷类型。PRA、IΣ₁、RCA₀、WKL₀ 等一致，PA 与 ACA₀ 等一致；即使 WKL₀ 比 RCA₀ 能证明更多二阶命题，也不能画成严格一致性强度箭头。参考 [Simpson《二阶算术子系统》](https://doi.org/10.1017/CBO9780511581007)与 [Schindler–Cheng 的高阶算术研究](https://www.uni-muenster.de/FB10/u/rds/cheng_yong_rds.pdf)。Q 与 EFA 附近仅按理论扩张排布，虚线不声称严格一致性差距。
 
 “算术层：Q—Zω”是导航中的 **TIER 00**。桌面端的层次导航会保持在视野内；手机端右下角的“选择层次”可随时返回导航。页面资源使用版本参数，避免旧脚本缓存掩盖新增层次。每个 tier 上方都有关系区，分别标注已证的等一致或单向推论、命题判定，以及有文献依据的开放问题；“本图未核实”不等同于数学公开问题。[Friedman–Holy](https://www.logic.univie.ac.at/~dsyfriedman/papers/joint.peter.acc.pdf)讨论 PFA 与超紧致基数之间仍未闭合的一致性强度差距。
 
