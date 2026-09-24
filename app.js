@@ -106,7 +106,8 @@ const references = {
   simpson: ['Simpson《二阶算术子系统》· DOI', 'https://doi.org/10.1017/CBO9780511581007'],
   kirbyparis: ['Kirby–Paris 1982 · DOI', 'https://doi.org/10.1112/blms/14.4.285'],
   schindlercheng: ['Schindler–Cheng《高阶算术》· 原文', 'https://www.uni-muenster.de/FB10/u/rds/cheng_yong_rds.pdf'],
-  kohlenbach: ['Kohlenbach 2000 · 高阶反向数学', 'https://tidsskrift.dk/brics/article/view/20216']
+  kohlenbach: ['Kohlenbach 2000 · 高阶反向数学', 'https://tidsskrift.dk/brics/article/view/20216'],
+  pfastrength: ['Friedman–Holy · PFA 一致性强度', 'https://www.logic.univie.ac.at/~dsyfriedman/papers/joint.peter.acc.pdf']
 };
 
 Object.assign(papers, {
@@ -156,7 +157,7 @@ Object.assign(papers, {
 });
 
 const tiers = [
-  {name:'算术公理 Q—Zω',code:'TIER 00',summary:'从 Robinson 算术 Q 到包含所有有限类型的 ω 阶算术；按形式理论的一致性强度分档。',route:'Q → EFA → PRA/RCA₀ → PA/ACA₀ → ATR₀ → Π¹₁-CA₀ → Z₂ → Zₙ → Zω',bands:[
+  {name:'算术层：Q—Zω',code:'TIER 00',summary:'从 Robinson 算术 Q 到包含所有有限类型的 ω 阶算术；按形式理论的一致性强度分档。',route:'Q → EFA → PRA/RCA₀ → PA/ACA₀ → ATR₀ → Π¹₁-CA₀ → Z₂ → Zₙ → Zω',relations:[['已证等一致','PRA ≡Con IΣ₁ ≡Con RCA₀ ≡Con WKL₀；PA ≡Con ACA₀',references.simpson],['已证强度','对每个有限 n≥2，Zₙ₊₁ 证明 Con(Zₙ)',references.schindlercheng],['已判定','Goodstein 定理不可由 PA 证明；ZFC 可证明该定理',references.kirbyparis],['暂不比较','Q→EFA→PRA 的虚线只标理论扩张；本图未核实严格 Con 差距']],bands:[
     {label:'Robinson 算术 Q',theories:[['Q','有限公理；不含归纳公理模式']],reason:'Q 是本图的最低算术层。它已本质不可判定，但这一性质不表示它与后面的算术理论等一致。',sources:[references.robinsonq],problems:['qessential']},
     {label:'初等函数算术 EFA',theories:[['IΔ₀ + Exp（EFA）','有界归纳与指数全函数性']],reason:'在 Q 之上增加受限归纳和指数；这里只按理论扩张排列，不用实线声称已核对的严格一致性差距。',sources:[references.simpson],problems:['efa'],link:'dashed'},
     {label:'PRA / IΣ₁ / RCA₀ / WKL₀',theories:[['PRA','原始递归算术'],['IΣ₁','Σ₁ 公式的归纳'],['RCA₀','递归概括的二阶算术'],['WKL₀','RCA₀ + 弱 König 引理']],reason:'四种理论等一致。WKL₀ 在二阶命题上比 RCA₀ 强，但 Harrington 的保守性定理说明两者的一致性强度相同。',sources:[references.simpson],problems:['wkl'],link:'dashed'},
@@ -168,14 +169,14 @@ const tiers = [
     {label:'有限高阶算术 Zₙ（每个固定 n≥4）',theories:[['Zₙ（n≥4）','每个有限 n 都是单独的一致性强度档']],reason:'对每个 n，Zₙ₊₁ 可证明 Con(Zₙ)；这里用一个系列卡片缩写无限多档，不表示所有 n 等一致。',sources:[references.schindlercheng],problems:['finiteorders'],series:true,link:'solid'},
     {label:'ω 阶算术 Zω',theories:[['Zω = ⋃ₙ≥₂ Zₙ','所有有限类型；没有新设无穷类型']],reason:'按照用户指定的定义，汇集每个有限阶的公理。ZFC 可构造它的标准有限类型模型；不能把本档与 ZFC 基准同框。',sources:[references.schindlercheng,references.kohlenbach],problems:['omegaorders'],link:'solid'}
   ],note:'“算术阶数”指允许哪些有限类型的对象，不等于公式的算术层级。Q、EFA 附近的虚线只排理论扩张，不声称已核对严格一致性差距；WKL₀ 与 RCA₀ 虽证明力不同，仍等一致。'},
-  {name:'ZFC 与模型存在',code:'TIER 01',summary:'从 ZFC 基准到一般模型、传递模型；三者须分档，随后进入 worldly。',route:'ZFC → Con(ZFC) → 传递 ZFC 模型',bands:[
+  {name:'ZFC 与模型存在',code:'TIER 01',summary:'从 ZFC 基准到一般模型、传递模型；三者须分档，随后进入 worldly。',route:'ZFC → Con(ZFC) → 传递 ZFC 模型',relations:[['已证强度','ZFC <Con ZFC+Con(ZFC) <Con 存在传递 ZFC 模型 <Con 存在 worldly 基数',references.hamkinsother],['已判定','CH 与 ¬CH、Souslin 假设的两侧答案均可与 ZFC 相容'],['区分背景','ZF+DC+所有实数集有 Baire 性质与 ZFC 等一致，不表示它蕴含 AC',references.shelah]],bands:[
     {label:'基准层',theories:[
       ['ZF','不含选择公理'],['ZFC','ZF + AC'],['ZFC + CH','连续统假设成立'],['ZFC + ¬CH','连续统假设失败'],['ZFC + Souslin 假设','无 Souslin 直线'],['ZFC + ¬Souslin 假设','存在 Souslin 直线'],['ZF + DC + 所有实数集有 Baire 性质','Shelah 模型']
     ],reason:'这些理论的相容性可由 ZFC 的相容性获得；这里的并列只表示等一致，不表示理论互相蕴含。',sources:[references.shelah],problems:['ac','ch','suslin','whitehead','baire']},
     {label:'Con(ZFC) 层',theories:[['ZFC + Con(ZFC)','ZFC 自身一致'],['ZFC +「存在一个一阶 ZFC 模型」','由完备性定理对应'],['ZF + Con(ZF)','与 ZFC 形式化等一致']],reason:'模型指一般一阶模型；第二不完备性定理把此层严格分离于基准层。',problems:['con'],link:'solid'},
     {label:'传递 ZFC 模型层',theories:[['ZFC +「存在传递的 ZFC 模型」','真实 ∈ 的良基模型']],reason:'传递模型比单纯 Con(ZFC) 更强，但其存在仍弱于下一 tier 的世界基数假设。',sources:[references.hamkinsother],problems:['transitive'],link:'solid'}
   ],note:'CH、Souslin 假设和 Whitehead 问题两侧答案位于基准框；Con(ZFC) 与传递模型各自占更高的前置档。'},
-  {name:'世界基数',code:'TIER 02',summary:'从一枚世界基数出发，展示 worldly 到不可达基数之前的严格强度链。',route:'worldly → otherworldly → totally otherworldly → 不可达',bands:[
+  {name:'世界基数',code:'TIER 02',summary:'从一枚世界基数出发，展示 worldly 到不可达基数之前的严格强度链。',route:'worldly → otherworldly → totally otherworldly → 不可达',relations:[['已证强度','worldly → 真类多个 worldly → otherworldly → 真类多个 otherworldly → totally otherworldly；每步严格增强',references.hamkinsother],['已证上界','存在不可达基数给出这一链各档的相容性上界',references.hamkinsother],['尚未标定','KM 是该区间的旁支；本图未核实它与相邻 otherworldly 档的精确比较',references.gitmankm]],bands:[
     {label:'世界基数层',theories:[['ZFC + 存在 worldly 基数 κ','Vκ ⊨ ZFC']],reason:'每个不可达基数都是 worldly，但最小 worldly 基数可为奇异，且其共尾度为 ω。此层严格高于仅存在传递 ZFC 模型。',sources:[references.hamkinsworldly,references.hamkinsother],problems:['worldly']},
     {label:'真类多个世界基数',theories:[['ZFC + 存在真类多个 worldly 基数','∀α ∃κ>α (Vκ ⊨ ZFC)']],reason:'要求 worldly 基数在序数中无界，严格强于仅有一枚。',sources:[references.hamkinsother],problems:['manyworldly'],link:'solid'},
     {label:'otherworldly 层',theories:[['ZFC + 存在 otherworldly 基数 κ','∃λ>κ (Vκ ≺ Vλ)']],reason:'较低秩初段在较高秩初段中一阶初等；严格高于真类多个 worldly。',sources:[references.hamkinsother],problems:['otherworldly'],link:'solid'},
@@ -184,16 +185,16 @@ const tiers = [
     {label:'真类多个 totally otherworldly',theories:[['ZFC + 存在真类多个 totally otherworldly 基数','每个高度之上都有一个']],reason:'严格高于单枚 totally otherworldly，仍严格低于不可达基数存在。',sources:[references.hamkinsother],problems:['totallyother'],link:'solid'},
     {label:'Kelley–Morse 类理论 · 区间旁支',theories:[['KM（含全类概括的类集合论）','真谓词与秩初段初等塔']],reason:'KM 严格弱于存在不可达基数，并强于大量迭代 Con(ZFC) 层。这里把它作为同一区间的旁支；虚线不宣称它与上一档有已核对的精确比较。',sources:[references.hamkinskm,references.gitmankm],problems:['km'],link:'dashed'}
   ],note:'Hamkins 给出的 worldly → otherworldly → totally otherworldly 各档在一致性强度上严格递增。KM 另作区间旁支；下一个 tier 的不可达基数是以上各档的已知上界。'},
-  {name:'不可达基数',code:'TIER 03',summary:'不可达基数对应实数集正则性；Mahlo 则另列为更强的基数公理。',route:'不可达 → Mahlo',bands:[
+  {name:'不可达基数',code:'TIER 03',summary:'不可达基数对应实数集正则性；Mahlo 则另列为更强的基数公理。',route:'不可达 → Mahlo',relations:[['已证等一致','存在强不可达 ≡Con 存在弱不可达 ≡Con ZF+DC+所有实数集可测',references.shelah],['已证强度','存在 Mahlo 基数严格强于存在不可达基数'],['判定范围','“所有投射实数集可测”可与 ZFC 共存；“所有实数集可测”在图中使用 ZF+DC 背景',references.solovay]],bands:[
     {label:'不可达层',theories:[['ZFC + 存在强不可达基数','不可数正则强极限 κ'],['ZFC + 存在弱不可达基数','在 L 中取得强不可达下界'],['ZFC + 存在 Grothendieck 宇宙','范畴论的集合宇宙'],['ZF + DC + 每个实数集都 Lebesgue 可测','Solovay–Shelah 等一致性'],['ZFC + 每个投射实数集都 Lebesgue 可测','投射集版本']],reason:'这五种理论在一致性强度上相同。弱／强不可达的基数性质不同；两条可测性理论使用不同基础公理或量化范围。',sources:[references.goldbergweak,references.hamkinsworldly,references.solovay,references.shelah,references.goldstern],problems:['weakinaccessible','grothendieck','lm','projlm']},
     {label:'Mahlo 层',theories:[['ZFC + 存在 Mahlo 基数','其下不可达基数构成驻集']],reason:'原 tier 中的下一枚大基数；目前不附会未经核对的“经典问题”等一致式。',link:'solid'}
   ],note:'同一 tier 内仍有严格的强度差异，因此每个档位单独成组。'},
-  {name:'弱紧致基数',code:'TIER 04',summary:'把树性质、不可分辨元和划分性质各自配到准确的强度层。',route:'弱紧致、0# 与 Ramsey',bands:[
+  {name:'弱紧致基数',code:'TIER 04',summary:'把树性质、不可分辨元和划分性质各自配到准确的强度层。',route:'弱紧致、0# 与 Ramsey',relations:[['已证等一致','存在弱紧致基数 ≡Con ℵ₂ 具有树性质',references.mitchell],['已证等价','0♯ 存在与无参数 Π¹₁ 决定性对应；有实参数版本不能直接替换',references.harrington],['单向判定','¬SCH ⇒ 0♯ 存在；¬SCH 的精确强度另在 Mitchell 序 κ⁺⁺ 层',references.mitchellcover],['暂不比较','Ramsey 与相邻框之间只用阅读虚线；本图未核实精确关系']],bands:[
     {label:'弱紧致层',theories:[['ZFC + 存在弱紧致基数','κ 的树性质／划分性质'],['ZFC + ℵ₂ 具有树性质','Mitchell–Silver 等一致性'],['ZFC + 必然 c.c.c. 极大性原则','Hamkins–Woodin 等一致性']],reason:'ℵ₂ 树性质的上界由 Mitchell 的塌缩构造给出，下界由 L 中的弱紧致基数给出。',sources:[references.mitchell,references.hamkins],problems:['tp']},
     {label:'0# 层',theories:[['ZFC + 0# 存在','L 的不可分辨元'],['ZFC + 无参数解析决定性 Π¹₁-Det','Martin–Harrington 定理']],reason:'解析决定性是细体、无实参数的等价型配对。Jensen 覆盖引理还表明 ¬SCH 必有 0♯；这只是单向必要条件，¬SCH 的精确强度另列在 Mitchell 序层。',sources:[references.harrington,references.larson,references.mitchellcover],problems:['analytic','schsharp'],link:'solid'},
     {label:'Ramsey 层',theories:[['ZFC + 存在 Ramsey 基数','强化的划分性质']],reason:'单独陈列；与前两组的视觉次序只沿用原 tier 的阅读顺序。',link:'dashed'}
   ],note:'虚线表示本图没有声称相邻两组存在严格的一致性强度箭头。'},
-  {name:'可测—超紧致基数',code:'TIER 05',summary:'以 Mitchell 序定位 GCH 与 SCH 的失败，再细分决定性、LSA 与超紧致的实数集结论。',route:'可测 → Mitchell 序 → ADᵣ → LSA → 超紧致',bands:[
+  {name:'可测—超紧致基数',code:'TIER 05',summary:'以 Mitchell 序定位 GCH 与 SCH 的失败，再细分决定性、LSA 与超紧致的实数集结论。',route:'可测 → Mitchell 序 → ADᵣ → LSA → 超紧致',relations:[['已证等一致','可测基数 ≡Con ω₁ 上 precipitous ideal；o(κ)=κ⁺⁺ ≡Con 可测 κ 处 ¬GCH ≡Con ¬SCH',references.gitik1991],['已证等一致','无穷多个 Woodin ≡Con ZF+AD；ADᵣ+Θ 正则另有 CH+稠密理想刻画',references.adthetareg],['单向判定','LSA ⇒ ¬ADᵣ；LSA⁺ ⇒ LSA；超紧致 ⇒ L(ℝ)⊨AD',references.lsabook],['开放问题','LSA⁺ 是否严格高于 LSA？',references.steelmouse],['开放问题','PFA 与超紧致是否等一致？',references.pfastrength]],bands:[
     {label:'可测层',theories:[['ZFC + 存在可测基数','κ-完备非主超滤'],['ZFC + ω₁ 上存在 precipitous ideal','Jech–Magidor–Mitchell–Prikry'],['ZFC + 连续统实值可测','Solovay 的随机实数模型']],reason:'三种理论等一致。可测基数还直接推出 V ≠ L；后者是命题判定。',sources:[references.precipitous,references.realvalued],problems:['vl','precip','realvalued']},
     {label:'Mitchell 序 ≥ 2 层',theories:[['ZFC + ∃可测 κ (o(κ) ≥ 2)','正规测度之间出现非平凡序']],reason:'Mitchell 序衡量同一可测基数上正规测度的迭代结构；此档用于显示刻度，不把它冒充为 GCH 或 SCH 失败的精确强度。',sources:[references.mitchellcore,references.mitchellcover],problems:['mitchellorder'],link:'solid'},
     {label:'Mitchell 序 κ⁺⁺ 层',theories:[['ZFC + ∃可测 κ (o(κ) = κ⁺⁺)','测度序列达到关键阈值'],['ZFC + ∃可测 κ (2^κ > κ⁺)','可测基数处 GCH 失败'],['ZFC + ¬SCH','某奇异强极限 μ 满足 2^μ > μ⁺']],reason:'三种理论等一致。Gitik 给出 SCH 失败的上下界；可测基数处 GCH 失败的配对见 Mitchell 的覆盖引理综述。这里是相对一致性，不是各命题直接互推。',sources:[references.mitchellcover,references.gitik1989,references.gitik1991],problems:['gchmeas','schfail'],link:'solid'},
@@ -208,19 +209,19 @@ const tiers = [
     {label:'LSA⁺ 层',theories:[['ZF + LSA⁺','AD⁺ + ∃A⊆ℝ ∀α<Θ ∀s:ω→α (A∉OD(s))']],reason:'Steel 定义 6.1 与命题 6.2：LSA⁺ 直接蕴含 LSA。它们是否有严格不同的一致性强度，原文明确列为尚未证明；这里单列理论，不与 LSA 同框标成等一致。定理 6.3 给出 least branch hod pair 假设下的相容性上界。',sources:[references.steelmouse,references.steelmousepdf],problems:['lsaplus'],link:'implication'},
     {label:'超紧致层',theories:[['ZFC + 存在超紧致基数','强闭包初等嵌入']],reason:'Woodin 与 Shelah–Woodin 证明超紧致基数对 L(ℝ) 中实数集的决定性、可测性和 Baire 性质有强烈推论；Baumgartner 从此出发构造 PFA 模型。这些均不是超紧致的精确等一致配对。',sources:[references.woodin1988,references.shelahwoodin,references.steelpfa],problems:['pfa','lrtrees','lrregular'],link:'dashed'}
   ],note:'¬SCH 比 0♯ 的单向必要条件强，精确落在 Mitchell 序 κ⁺⁺ 层。LSA ⟹ ¬ADᵣ；LSA⁺ ⟹ LSA，但严格一致性强度差异未证。超紧致的实数集结论限于 L(ℝ)。'},
-  {name:'可扩与巨大基数',code:'TIER 06',summary:'以模型论刻画补足可扩与巨大层；同框只放已核对的等价或等一致理论。',route:'可扩 → Vopěnka → 巨大',bands:[
+  {name:'可扩与巨大基数',code:'TIER 06',summary:'以模型论刻画补足可扩与巨大层；同框只放已核对的等价或等一致理论。',route:'可扩 → Vopěnka → 巨大',relations:[['已证刻画','最小可扩基数 = ULST(L²)；每个固定 n 的最小 C⁽ⁿ⁾-可扩基数 = 对应 sort logic 的 ULST',references.bonneyosinski],['已证等价','VP 对应“每种抽象逻辑都有 ULST 数”的公理模式；巨大基数有类型省略紧致性刻画',references.bonneyosinski],['避免合并','不同 n 的 C⁽ⁿ⁾-可扩与 n-巨大是逐级系列，不构成同一等一致框']],bands:[
     {label:'可扩层',theories:[['ZFC + 存在可扩基数','extendible'],['ZFC + 二阶逻辑 L² 的 ULST 数存在','该数恰是最小可扩基数']],reason:'Boney–Osinski 定理 6.2 给出同一模型内的精确刻画：最小可扩基数 = ULST(L²)。',sources:[references.bonneyosinski]},
     {label:'C⁽ⁿ⁾-可扩系列（固定 n≥1）',theories:[['ZFC + 存在 C⁽ⁿ⁾-可扩基数','逐一固定 n'],['ZFC + sort logic Lˢ⁽ⁿ⁾ 的 ULST 数存在','最小 C⁽ⁿ⁾-可扩基数']],reason:'定理 6.3 对每个固定 n 给出精确对应；不同 n 之间不可视为同一强度。',sources:[references.bonneyosinski],link:'solid'},
     {label:'Vopěnka 原理 VP',theories:[['ZFC + VP','类形式的 Vopěnka 原理'],['ZFC +「每种逻辑都有 ULST 数」','相应公理模式']],reason:'推论 6.4 给出等价公理模式；这里的“每种逻辑”按原文的抽象逻辑定义理解。',sources:[references.bonneyosinski],link:'solid'},
     {label:'巨大层',theories:[['ZFC + 存在巨大基数 κ','某目标 λ>κ'],['ZFC + L(Q^WF) 满足相应的类型省略紧致性','[λ]^κ_*–κ 紧致性']],reason:'定理 4.5 对给定 κ<λ 逐点等价；存在量化后得到同一强度的理论。',sources:[references.bonneyosinski],link:'solid'},
     {label:'n-巨大系列（固定 n≥2）',theories:[['ZFC + 存在 n-巨大基数','n 分别指定']],reason:'1-巨大即巨大；n≥2 的每一项单列于此，未找到可靠的经典问题精确等一致配对。',link:'solid'}
   ],note:'ULST 指向上 Löwenheim–Skolem–Tarski 数。这里的模型论对应是精确刻画；n-巨大暂不添未经核对的等一致式。'},
-  {name:'I3 与 I2',code:'TIER 07',summary:'I3 的 Laver table 推论与 I3、I2 之间的 exacting 层一起显示。',route:'rank-into-rank 第一段',bands:[
+  {name:'I3 与 I2',code:'TIER 07',summary:'I3 的 Laver table 推论与 I3、I2 之间的 exacting 层一起显示。',route:'rank-into-rank 第一段',relations:[['已证强度','I3 <Con 存在 exacting 基数 <Con I2',references.beyondhod],['单向判定','I3 ⇒ Laver table 的 q(n) 对每个 n 有定义',references.laver],['开放问题','q(n) 全函数性是否可在 ZFC 中证明？',references.laver]],bands:[
     {label:'I3',theories:[['ZFC + I3','非平凡 j:Vλ→Vλ']],reason:'I3 可证明首行 Laver table 周期无界，因此 q(n) 对每个 n 有定义；ZFC 能否证明该全函数性仍未解决。',sources:[references.laver],problems:['laverq']},
     {label:'exacting 层',theories:[['ZFC + 存在 exacting 基数','严格介于 I3 与 I2']],reason:'2025 年结果证明这一层的一致性强度严格高于 I3、低于 I2。',sources:[references.beyondhod],problems:['exacting'],link:'solid'},
     {label:'I2',theories:[['ZFC + I2','更强的秩内嵌入']],reason:'I2 还给出 HOD 假设与 exacting、上方可扩基数共同成立的相对一致性。',sources:[references.beyondhod],problems:['i2hod'],link:'solid'}
   ],note:'I3 对 q(n) 是单向判定，不能据此推断 q(n) 与 I3 等一致或已知独立于 ZFC。'},
-  {name:'I1 与 I0',code:'TIER 08',summary:'I1 添入组合性质的相容性工作；I0 添入已证明的同强度理论。',route:'rank-into-rank 第二段',bands:[
+  {name:'I1 与 I0',code:'TIER 08',summary:'I1 添入组合性质的相容性工作；I0 添入已证明的同强度理论。',route:'rank-into-rank 第二段',relations:[['已证等一致','I0 ≡Con 存在 ultraexacting 基数',references.beyondhod],['相容性结论','I1 可与相应的 λ⁺ 或 λ⁺⁺ 树性质分别相容；不能推成同时成立',references.dimontewu],['区分层次','树性质的力迫相容性不是 I1 的等一致刻画']],bands:[
     {label:'I1',theories:[['ZFC + I1','j:Vλ+1→Vλ+1']],reason:'I1(λ) 与 λ⁺ 或 λ⁺⁺ 的树性质等组合性质有分别构造的相容性结果；这里不宣称它们同时成立或等一致。',sources:[references.dimontewu],problems:['i1forcing']},
     {label:'I0',theories:[['ZFC + I0','j:L(Vλ+1)→L(Vλ+1)'],['ZFC + 存在 ultraexacting 基数','Aguilera–Bagaria–Goldberg–Lücke']],reason:'2025 年论文定理 A 证明两者等一致；并非断言两个公理在同一模型中等价。',sources:[references.beyondhod],problems:['i0hod'],link:'solid'}
   ],note:'I1 的组合结论是力迫相容性结果；I0 的 ultraexacting 配对才是等一致性结果。'},
@@ -281,7 +282,7 @@ function renderDetail() {
   detail.append(head);
   if(tier.branch)detail.append(element('div','branch-alert','本层属于无选择公理的研究线。虚线只表示主题或原 tier 的阅读顺序，不声称与 ZFC 主线有已证明的强弱关系。'));
   detail.append(element('p','route-label',tier.route));
-  if(tier.relations?.length){const relations=element('div','relation-map');relations.append(element('strong','relation-map-title','已证关系与开放问题'));tier.relations.forEach(([label,value])=>{const row=element('div','relation-map-row');row.append(element('span',null,label),element('b',null,value));relations.append(row);});detail.append(relations);}
+  if(tier.relations?.length){const relations=element('div','relation-map');relations.append(element('strong','relation-map-title','强度关系、命题判定与待解问题'));tier.relations.forEach(([label,value,source])=>{const row=element('div','relation-map-row');row.append(element('span',null,label),element('b',null,value));if(source){const anchor=element('a','relation-source','文献 ↗');anchor.href=source[1];anchor.target='_blank';anchor.rel='noopener noreferrer';anchor.setAttribute('aria-label',source[0]);row.append(anchor);}relations.append(row);});detail.append(relations);}
   const list=element('div','level-list');
   tier.bands.forEach((band,index)=>{
     if(index>0){
