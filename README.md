@@ -13,3 +13,5 @@
 无选择公理的末两层改为偏序：Reinhardt 严格弱于 super-Reinhardt 和 Berkeley；super-Reinhardt 严格弱于 totally Reinhardt。club Berkeley 同时蕴含 Berkeley 与 totally Reinhardt；limit club Berkeley 蕴含 club Berkeley。普通 Berkeley 与 super-Reinhardt、totally Reinhardt 的一致性比较仍未解决。rank-Berkeley 可由 Reinhardt 推出，但二者是否等一致也是开放问题；不能把基数的大小顺序等同于理论的一致性强度。依据 [Bagaria–Koellner–Woodin](https://doi.org/10.1017/bsl.2019.28)、[Goldberg–Schlutzenberg](https://doi.org/10.4171/JEMS/1318) 及 [Choiceless Elementary Embeddings 的问题表](https://karagila.org/cheese/problems.pdf)。
 
 一线层另增 ZF+ADᵣ+「Θ 正则」的四项等一致组，包含 CH+ω₁ 上 ω₁-稠密理想及两种非平稳理想表述，依据 [Adolf 等人的论文](https://doi.org/10.48550/arXiv.2111.06220)。其上单列 LSA，依据 [Sargsyan–Trang 专著](https://doi.org/10.1017/9781009520683)说明定义、与 ADᵣ+Θ 正则的相对一致性比较及已知上界。LSA 蕴含 ¬ADᵣ，因此该箭头不表示直接蕴含；Woodin 极限及 PFA 只作为相容性上界。
+
+LSA 之后单列 LSA⁺。Steel《Mouse Pairs and Suslin Cardinals》[定义 6.1、命题 6.2](https://math.berkeley.edu/~steel/papers/mousepairs.suslina.pdf)给出 LSA⁺ 的公式及 LSA⁺ 蕴含 LSA；原文也明确指出尚未证明二者具有严格不同的一致性强度。因此连接线使用“直接蕴含、严格强度未证”的标记，不把它们放入等一致框。[发表版本 DOI](https://doi.org/10.1142/9789819806584_0013)。
