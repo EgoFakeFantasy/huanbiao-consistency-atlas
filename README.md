@@ -31,3 +31,5 @@ LSA 之后单列 LSA⁺。Steel《Mouse Pairs and Suslin Cardinals》[定义 6.1
 弱紧致与 ω-Erdős 之间另列不可言喻基数和 remarkable 基数。[Schindler](https://doi.org/10.48550/arXiv.math/9909043)把 remarkable 的一致性强度放在两者之间，并证明其存在与 proper forcing 下的 L(ℝ) 绝对性等一致；这与 Wilson 所用的「非 Σ₂-反射弱 remarkable」是不同断言。
 
 0♯ 层加入「存在非平凡初等嵌入 j:L→L」作为与 0♯ 等价的理论，并把 V≠L 列为其直接判定的命题。两个方向见 [Jech《Set Theory》第 18 章](https://euclid.colorado.edu/~monkd/jech.pdf)的引理 18.31 与定理 18.45。单独的 V≠L 不具有这一强度。
+
+Sealing、Tower Sealing 和 LSA-over-uB 在同一层展示。三者的等一致性依据 [Sargsyan–Trang 2024](https://doi.org/10.1017/fms.2023.127)定理 1.4、1.7；共同背景 T 是真类多个 Woodin 基数和可测基数类为驻类，不宣称无条件或逐点逻辑等价。AD⁺+¬HPC 单列，其已知下界见 [Steel 的讲义](https://www.math.ucla.edu/~ineeman/Conf/VIG2023/steel.pdf)：可得到一个具有强基数且其上方有 Woodin 基数的 least-branch hod pair 模型。目前不把它与 Sealing 组标成等一致或已证严格强度关系。
