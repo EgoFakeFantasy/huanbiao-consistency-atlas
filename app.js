@@ -121,7 +121,7 @@ const references = {
   schindlerremarkable: ['Schindler 1999 · DOI', 'https://doi.org/10.48550/arXiv.math/9909043'],
   sealingexact: ['Sargsyan–Trang 2024 · DOI', 'https://doi.org/10.1017/fms.2023.127'],
   steelhpc: ['Steel · Hod Pair Capturing 讲义', 'https://www.math.ucla.edu/~ineeman/Conf/VIG2023/steel.pdf'],
-  steelhpccomparison: ['Steel《A Comparison Process for Mouse Pairs》Part I · 引言', 'https://math.berkeley.edu/~steel/papers/ld.comparison.part1.pdf'],
+  steelhpccomparison: ['Steel · Mouse pairs 比较论文 Part I · 引言', 'https://math.berkeley.edu/~steel/papers/ld.comparison.part1.pdf'],
   steelhpcpaper: ['Steel《Mouse Pairs and Suslin Cardinals》· 原文', 'https://math.berkeley.edu/~steel/papers/mousepairs.suslina.pdf']
 };
 
